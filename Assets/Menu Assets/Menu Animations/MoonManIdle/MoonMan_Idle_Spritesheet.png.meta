@@ -1,0 +1,500 @@
+fileFormatVersion: 2
+guid: 881a65b4ccfb7334a911eb1d0aefe663
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4420806741784457151
+    second: MoonMan_Idle_Spritesheet_0
+  - first:
+      213: -464136594102697456
+    second: MoonMan_Idle_Spritesheet_1
+  - first:
+      213: 2317950395059897276
+    second: MoonMan_Idle_Spritesheet_2
+  - first:
+      213: -2790128132603894746
+    second: MoonMan_Idle_Spritesheet_3
+  - first:
+      213: 751554542184683981
+    second: MoonMan_Idle_Spritesheet_4
+  - first:
+      213: 1440687643852765867
+    second: MoonMan_Idle_Spritesheet_5
+  - first:
+      213: 8132604124782039177
+    second: MoonMan_Idle_Spritesheet_6
+  - first:
+      213: -2277142721571412343
+    second: MoonMan_Idle_Spritesheet_7
+  - first:
+      213: 553335486233307553
+    second: MoonMan_Idle_Spritesheet_8
+  - first:
+      213: 6311411311083301572
+    second: MoonMan_Idle_Spritesheet_9
+  - first:
+      213: -7941725989265755901
+    second: MoonMan_Idle_Spritesheet_10
+  - first:
+      213: 4593897214248865207
+    second: MoonMan_Idle_Spritesheet_11
+  - first:
+      213: 1209908360318970816
+    second: MoonMan_Idle_Spritesheet_12
+  - first:
+      213: -8577128164889633365
+    second: MoonMan_Idle_Spritesheet_13
+  - first:
+      213: 6290814544211743374
+    second: MoonMan_Idle_Spritesheet_14
+  - first:
+      213: 4530190697827348797
+    second: MoonMan_Idle_Spritesheet_15
+  - first:
+      213: -6323065653527879022
+    second: MoonMan_Idle_Spritesheet_16
+  - first:
+      213: 4164436676429297941
+    second: MoonMan_Idle_Spritesheet_17
+  - first:
+      213: -1668786855661515065
+    second: MoonMan_Idle_Spritesheet_18
+  - first:
+      213: -2550459165082700565
+    second: MoonMan_Idle_Spritesheet_19
+  - first:
+      213: 1982990648322298569
+    second: MoonMan_Idle_Spritesheet_20
+  - first:
+      213: 6517577258713765134
+    second: MoonMan_Idle_Spritesheet_21
+  - first:
+      213: -2411505325497999119
+    second: MoonMan_Idle_Spritesheet_22
+  - first:
+      213: 4929803783314570285
+    second: MoonMan_Idle_Spritesheet_23
+  - first:
+      213: -6680219395604682577
+    second: MoonMan_Idle_Spritesheet_24
+  - first:
+      213: 213259997465006078
+    second: MoonMan_Idle_Spritesheet_25
+  - first:
+      213: -995616777922884455
+    second: MoonMan_Idle_Spritesheet_26
+  - first:
+      213: -7057228773043618054
+    second: MoonMan_Idle_Spritesheet_27
+  - first:
+      213: -624469645413555141
+    second: MoonMan_Idle_Spritesheet_28
+  - first:
+      213: 3817005312966548000
+    second: MoonMan_Idle_Spritesheet_29
+  - first:
+      213: 6190400980661824409
+    second: MoonMan_Idle_Spritesheet_30
+  - first:
+      213: -3339374289189113909
+    second: MoonMan_Idle_Spritesheet_31
+  - first:
+      213: -7101666272415409909
+    second: MoonMan_Idle_Spritesheet_32
+  - first:
+      213: -5366757567175639839
+    second: MoonMan_Idle_Spritesheet_33
+  - first:
+      213: -3878089494541591647
+    second: MoonMan_Idle_Spritesheet_34
+  - first:
+      213: -8815074155547396774
+    second: MoonMan_Idle_Spritesheet_35
+  - first:
+      213: -764162097801275005
+    second: MoonMan_Idle_Spritesheet_36
+  - first:
+      213: 825311694513081077
+    second: MoonMan_Idle_Spritesheet_37
+  - first:
+      213: -8309740523172202683
+    second: MoonMan_Idle_Spritesheet_38
+  - first:
+      213: 1023266422014654720
+    second: MoonMan_Idle_Spritesheet_39
+  - first:
+      213: -2434538471094509265
+    second: MoonMan_Idle_Spritesheet_40
+  - first:
+      213: -1949922839386399569
+    second: MoonMan_Idle_Spritesheet_41
+  - first:
+      213: -79302119479262089
+    second: MoonMan_Idle_Spritesheet_42
+  - first:
+      213: 8480065416173005189
+    second: MoonMan_Idle_Spritesheet_43
+  - first:
+      213: 3553590755213467018
+    second: MoonMan_Idle_Spritesheet_44
+  - first:
+      213: 5054961389330887141
+    second: MoonMan_Idle_Spritesheet_45
+  - first:
+      213: 1169077300422296029
+    second: MoonMan_Idle_Spritesheet_46
+  - first:
+      213: -4988208512113165275
+    second: MoonMan_Idle_Spritesheet_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1401947d0b326a2c0800000000000000
+      internalID: -4420806741784457151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012cf3d0a3e0f89f0800000000000000
+      internalID: -464136594102697456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb385807a930b2020800000000000000
+      internalID: 2317950395059897276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62422520f397749d0800000000000000
+      internalID: -2790128132603894746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9df3ccfde0e6a00800000000000000
+      internalID: 751554542184683981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa732c67c95ef310800000000000000
+      internalID: 1440687643852765867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9809284fc50dcd070800000000000000
+      internalID: 8132604124782039177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986aed172c6f560e0800000000000000
+      internalID: -2277142721571412343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9ed8a61b7dda700800000000000000
+      internalID: 553335486233307553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4caa08ce523a69750800000000000000
+      internalID: 6311411311083301572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301b3523a4259c190800000000000000
+      internalID: -7941725989265755901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MoonMan_Idle_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bdc5f54d2dc0cf30800000000000000
+      internalID: 4593897214248865207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
