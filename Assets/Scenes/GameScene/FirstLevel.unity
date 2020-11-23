@@ -347,8 +347,8 @@ GameObject:
   - component: {fileID: 237183521}
   - component: {fileID: 237183520}
   - component: {fileID: 237183526}
-  - component: {fileID: 237183524}
   - component: {fileID: 237183523}
+  - component: {fileID: 237183524}
   - component: {fileID: 237183522}
   - component: {fileID: 237183525}
   m_Layer: 9
@@ -465,7 +465,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &237183524
 CapsuleCollider2D:

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
 {
@@ -10,5 +12,6 @@ public class Projectile : MonoBehaviour
    void Start()
     {
         rb.velocity = transform.right * speed;
+        Destroy(rb, 0.5f);
     }
 }
