@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private float moveInput;
     public float jumpForce;
+    public Animator animator;
 
     private bool isGrounded;
     public Transform feetPos;
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
 
+    private bool m_FacingRight = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,7 +29,20 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         moveInput = Input.GetAxis("Horizontal");
+        animator.SetFloat("Speed", Mathf.Abs(moveInput));
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        if (moveInput > 0 && !m_FacingRight)
+        {
+            // ... flip the player.
+            Flip();
+        }
+        // Otherwise if the input is moving the player left and the player is facing right...
+        else if (moveInput < 0 && m_FacingRight)
+        {
+            // ... flip the player.
+            Flip();
+        }
+
 
     }
     void Update()
@@ -56,5 +72,35 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+        if (isGrounded)
+        {
+            animator.SetBool("isGrounded", true);
+        }
+        else
+        {
+            animator.SetBool("isGrounded", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Attack();
+        }
+        
+
+    }
+
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        m_FacingRight = !m_FacingRight;
+
+        // Multiply the player's x local scale by -1.
+        transform.Rotate(0f, 180f, 0f);
+    }
+
+    void Attack()
+    {
+        animator.SetTrigger("Shoot");
+        
     }
 }
