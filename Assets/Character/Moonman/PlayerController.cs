@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public Transform feetPos;
     public float checkRadius;
     public LayerMask whatIsGround;
+    public Vector2 respawn;
 
     private float jumpTimeCounter;
     public float jumpTime;
@@ -42,6 +43,9 @@ public class PlayerController : MonoBehaviour
             // ... flip the player.
             Flip();
         }
+
+        if (gameObject.transform.position.y < -50f)
+            gameObject.transform.position = respawn;
 
 
     }
