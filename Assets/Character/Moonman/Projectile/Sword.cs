@@ -21,10 +21,10 @@ public class Sword : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Stormhead stormhead = collision.GetComponent<Stormhead>();
-        if(stormhead != null)
+        EnemyDamage enemyDmg= collision.GetComponent<EnemyDamage>();
+        if(enemyDmg!= null)
         {
-            stormhead.TakeDamage(damage); 
+            enemyDmg.TakeDamage(damage); 
         }
         if (!collision.name.Equals("Player")) {
             rb.velocity = transform.right;

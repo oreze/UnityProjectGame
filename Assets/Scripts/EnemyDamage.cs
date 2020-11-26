@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stormhead : MonoBehaviour
+public class EnemyDamage: MonoBehaviour
 {
     public int health = 150;
 
