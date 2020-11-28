@@ -21,14 +21,14 @@ public class Sword : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        EnemyDamage enemyDmg= collision.GetComponent<EnemyDamage>();
-        if(enemyDmg!= null)
+        EnemyDamage enemyDmg = collision.GetComponent<EnemyDamage>();
+
+        if (enemyDmg != null)
         {
-            enemyDmg.TakeDamage(damage); 
+            enemyDmg.TakeDamage(damage);
         }
-        if (!collision.name.Equals("Player")) {
+        if (!collision.name.Equals("Player") && !collision.tag.Equals("Projectile")) {
             rb.velocity = transform.right;
-            //Destroy(rb);
             animator.SetBool("isDestroyed", true);
             Destroy(gameObject, 0.2f);
         }

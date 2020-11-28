@@ -497,7 +497,6 @@ GameObject:
   - component: {fileID: 237183523}
   - component: {fileID: 237183524}
   - component: {fileID: 237183522}
-  - component: {fileID: 237183525}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -597,6 +596,12 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 748233473}
+  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+    type: 3}
+  firePoint: {fileID: 476483811}
+  currentWeapon: {fileID: 6257501305932054323, guid: c1f55e7ba4fa5364294d9ce43c79ca36,
+    type: 3}
+  attackSpeeed: 0.65
 --- !u!50 &237183523
 Rigidbody2D:
   serializedVersion: 4
@@ -634,22 +639,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0060100555, y: -0.046284303}
   m_Size: {x: 0.07460022, y: 0.23011449}
   m_Direction: 0
---- !u!114 &237183525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237183519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6797d199816b04e45962994c0c34961e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 476483811}
-  animator: {fileID: 237183526}
-  projectile: {fileID: 6257501305932054323, guid: c1f55e7ba4fa5364294d9ce43c79ca36,
-    type: 3}
 --- !u!95 &237183526
 Animator:
   serializedVersion: 3

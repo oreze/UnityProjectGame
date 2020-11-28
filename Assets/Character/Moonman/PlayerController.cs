@@ -23,6 +23,13 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
+    public ParticleSystem bloodSplash;
+
+    public Transform firePoint;
+    public GameObject currentWeapon;
+    [Range(0.01f, 10f)]public float attackSpeeed;
+    private float timeBetweenAttacks;
+    private bool canShoot;
 
     private bool m_FacingRight = true;
 
@@ -31,6 +38,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        canShoot = true;
+        timeBetweenAttacks = 1.0f / attackSpeeed;
     }
 
     void FixedUpdate()
@@ -90,10 +99,13 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isGrounded", false);
         }
-
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && canShoot)
         {
             Attack();
+            canShoot = false;
+            StartCoroutine(ShootDelay(timeBetweenAttacks));
+            Debug.Log(timeBetweenAttacks);
+            
         }
 
         if (Input.GetKeyDown(KeyCode.U))
@@ -114,12 +126,20 @@ public class PlayerController : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Shoot");
-        
+        Instantiate(currentWeapon, firePoint.position, firePoint.rotation);
+
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        Instantiate(bloodSplash, new Vector3(rb.position.x, rb.position.y-0.1f, 0), Quaternion.identity);
+    }
+
+    public IEnumerator ShootDelay(float time)
+    {
+        yield return new WaitForSeconds(time);
+        canShoot = true;
     }
 }

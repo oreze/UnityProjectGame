@@ -6,6 +6,7 @@ TagManager:
   tags:
   - turn
   - BabyBoxer
+  - Projectile
   layers:
   - Default
   - TransparentFX
