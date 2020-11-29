@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: -6806755141263944071
     second: damaged_1
+  - first:
+      213: -5216498980167538780
+    second: damaged_0
+  - first:
+      213: 6531167796378672715
+    second: damaged_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -69,7 +75,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -81,7 +87,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -98,7 +104,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 124
-        width: 119
+        width: 130
         height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -107,8 +113,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cf577eedb106a530800000000000000
-      internalID: 3865779245405396931
+      spriteID: 4a72de3d0d54b97b0800000000000000
+      internalID: -5216498980167538780
       vertices: []
       indices: 
       edges: []
@@ -119,7 +125,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 119
+        width: 130
         height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97616e3434c8981a0800000000000000
-      internalID: -6806755141263944071
+      spriteID: b4e1f97d18e53aa50800000000000000
+      internalID: 6531167796378672715
       vertices: []
       indices: 
       edges: []

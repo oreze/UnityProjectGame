@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class enemy_mov : MonoBehaviour {
 
+	public int maxHealth;
+	public int currentHealth;
 	public float speed;
 	private bool MoveRight = false;
 	private bool hasPath;
 	public Transform GroundCheck;
 	public float checkRadius;
 	public LayerMask whatIsGround;
+
+	void Start()
+    {
+		currentHealth = maxHealth;
+    }
 
 	// Use this for initialization
 	void Update () {
@@ -37,6 +44,17 @@ public class enemy_mov : MonoBehaviour {
 				MoveRight = true;
 			}	
 		}
+		else if (trig.gameObject.CompareTag("Projectile"))
+        {
+			TakeDamage(20);
+        }
 	}
+
+	void TakeDamage(int damage)
+    {
+		currentHealth -= damage;
+		if (currentHealth <= 0)
+			Destroy(gameObject);
+    }
 
 }
