@@ -430,6 +430,7 @@ GameObject:
   - component: {fileID: 188707972}
   - component: {fileID: 188707971}
   - component: {fileID: 188707970}
+  - component: {fileID: 188707974}
   m_Layer: 10
   m_Name: Baby Boxer (2)
   m_TagString: BabyBoxer
@@ -490,6 +491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
+  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+    type: 3}
 --- !u!95 &188707972
 Animator:
   serializedVersion: 3
@@ -560,6 +563,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &188707974
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188707968}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &208912177
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +768,7 @@ MonoBehaviour:
   firePoint: {fileID: 476483811}
   currentWeapon: {fileID: 6257501305932054323, guid: c1f55e7ba4fa5364294d9ce43c79ca36,
     type: 3}
-  attackSpeeed: 0.65
+  attackSpeeed: 3.09
 --- !u!50 &237183523
 Rigidbody2D:
   serializedVersion: 4
@@ -760,7 +784,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -9805,11 +9829,14 @@ GameObject:
   - component: {fileID: 559396428}
   - component: {fileID: 559396430}
   - component: {fileID: 559396429}
-  - component: {fileID: 559396432}
   - component: {fileID: 559396431}
+  - component: {fileID: 559396436}
+  - component: {fileID: 559396433}
+  - component: {fileID: 559396432}
+  - component: {fileID: 559396434}
   m_Layer: 10
   m_Name: Spirit Boxer
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9822,9 +9849,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559396427}
   m_LocalRotation: {x: -0.00046347725, y: -0.998517, z: -0.008609328, w: 0.05375447}
-  m_LocalPosition: {x: -9.68, y: -0.08, z: 10.97}
+  m_LocalPosition: {x: -14.94, y: 0.034, z: 9.629}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1291970367}
   m_Father: {fileID: 1584299550}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -0.98800004, y: -173.837, z: 0}
@@ -9911,8 +9939,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
---- !u!70 &559396432
-CapsuleCollider2D:
+  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+    type: 3}
+--- !u!61 &559396432
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9924,9 +9954,82 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00013258216, y: -0.05833019}
-  m_Size: {x: 0.14006281, y: 0.1829949}
-  m_Direction: 0
+  m_Offset: {x: 0.005653169, y: -0.059483696}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.42, y: 0.44}
+    newSize: {x: 1.37, y: 0.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 1
+  serializedVersion: 2
+  m_Size: {x: 0.111678876, y: 0.1733324}
+  m_EdgeRadius: 0
+--- !u!114 &559396433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559396427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954c6b7a07453c949be3655d46b4e539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.75
+  player: {fileID: 237183522}
+  animator: {fileID: 559396429}
+  rb: {fileID: 0}
+--- !u!61 &559396434
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559396427}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0012627989, y: -0.054907642}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.42, y: 0.44}
+    newSize: {x: 1.37, y: 0.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.14002714, y: 0.19117208}
+  m_EdgeRadius: 0
+--- !u!50 &559396436
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559396427}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &564725577
 GameObject:
   m_ObjectHideFlags: 0
@@ -56683,9 +56786,10 @@ GameObject:
   - component: {fileID: 751996051}
   - component: {fileID: 751996054}
   - component: {fileID: 751996053}
+  - component: {fileID: 751996055}
   m_Layer: 10
   m_Name: Stormhead
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56787,6 +56891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
+  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+    type: 3}
 --- !u!70 &751996054
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -56803,6 +56909,27 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0045599937, y: -0.42566016}
   m_Size: {x: 0.15411282, y: 0.35113233}
   m_Direction: 0
+--- !u!50 &751996055
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751996049}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &786096150
 GameObject:
   m_ObjectHideFlags: 0
@@ -73173,6 +73300,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1291970366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1291970367}
+  m_Layer: 10
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1291970367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291970366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 559396428}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296423556
 GameObject:
   m_ObjectHideFlags: 0
@@ -74863,6 +75020,7 @@ GameObject:
   - component: {fileID: 1779092842}
   - component: {fileID: 1779092844}
   - component: {fileID: 1779092845}
+  - component: {fileID: 1779092846}
   m_Layer: 10
   m_Name: Baby Boxer
   m_TagString: BabyBoxer
@@ -74967,6 +75125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
+  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+    type: 3}
 --- !u!61 &1779092845
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74993,6 +75153,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09799957, y: 0.082391456}
   m_EdgeRadius: 0
+--- !u!50 &1779092846
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779092840}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1784065324
 GameObject:
   m_ObjectHideFlags: 0
@@ -75080,6 +75261,7 @@ GameObject:
   - component: {fileID: 1831620573}
   - component: {fileID: 1831620572}
   - component: {fileID: 1831620571}
+  - component: {fileID: 1831620575}
   m_Layer: 10
   m_Name: Baby Boxer (1)
   m_TagString: BabyBoxer
@@ -75095,7 +75277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831620569}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.468, y: -0.597, z: 0}
+  m_LocalPosition: {x: -10.02, y: -0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 939736323}
@@ -75140,6 +75322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
+  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+    type: 3}
 --- !u!95 &1831620573
 Animator:
   serializedVersion: 3
@@ -75210,6 +75394,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1831620575
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831620569}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1843088703
 GameObject:
   m_ObjectHideFlags: 0
@@ -75223,6 +75428,7 @@ GameObject:
   - component: {fileID: 1843088707}
   - component: {fileID: 1843088705}
   - component: {fileID: 1843088708}
+  - component: {fileID: 1843088709}
   m_Layer: 10
   m_Name: Mud Guard
   m_TagString: Untagged
@@ -75327,6 +75533,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 250
+  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+    type: 3}
 --- !u!61 &1843088708
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75353,6 +75561,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.10013351, y: 0.17008598}
   m_EdgeRadius: 0
+--- !u!50 &1843088709
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843088703}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1942178168
 GameObject:
   m_ObjectHideFlags: 0
@@ -77584,6 +77813,7 @@ GameObject:
   - component: {fileID: 1967245440}
   - component: {fileID: 1967245438}
   - component: {fileID: 1967245439}
+  - component: {fileID: 1967245441}
   m_Layer: 10
   m_Name: Guardian
   m_TagString: Untagged
@@ -77714,6 +77944,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 70
+  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+    type: 3}
+--- !u!50 &1967245441
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967245435}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1994412079
 GameObject:
   m_ObjectHideFlags: 0

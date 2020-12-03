@@ -7,6 +7,7 @@ TagManager:
   - turn
   - BabyBoxer
   - Projectile
+  - Enemy
   layers:
   - Default
   - TransparentFX
