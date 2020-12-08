@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDamage: MonoBehaviour
+public class EnemyDamage : MonoBehaviour
 {
     public int maxHealth = 150;
     private int health;
+    [Range(0, 200)] public int damage;
     public ParticleSystem bloodSplash;
     private Rigidbody2D rb;
     //public GameObject deathEffect;
     public HealthbarEnemy healthbar;
+    private PolygonCollider2D attackCollider;
 
     void Start()
     {
@@ -28,6 +30,7 @@ public class EnemyDamage: MonoBehaviour
             Die();
         }
     }
+
     void Die()
     {
         Destroy(gameObject);

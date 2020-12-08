@@ -8,6 +8,8 @@ TagManager:
   - BabyBoxer
   - Projectile
   - Enemy
+  - Obstacle
+  - Damage
   layers:
   - Default
   - TransparentFX

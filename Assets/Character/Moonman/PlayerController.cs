@@ -137,6 +137,12 @@ public class PlayerController : MonoBehaviour
         Instantiate(bloodSplash, new Vector3(rb.position.x, rb.position.y-0.1f, 0), Quaternion.identity);
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.parent.gameObject.name.Contains("Baby Boxer"))
+            TakeDamage(20);
+    }
+
     public IEnumerator ShootDelay(float time)
     {
         yield return new WaitForSeconds(time);
