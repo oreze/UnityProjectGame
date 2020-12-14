@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         hasPath = Physics2D.OverlapCircle(GroundCheck.position, checkRadius, whatIsGround);
-        if (hasPath)
+        if (hasPath && Vector3.Distance(transform.position, player.transform.position) < 1.5f)
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         
         if (hasPath)

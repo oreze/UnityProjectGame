@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.parent.gameObject.name.Contains("Baby Boxer"))
+        if (collision.gameObject.CompareTag("Enemy"))
             TakeDamage(20);
     }
 
