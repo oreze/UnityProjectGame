@@ -12,14 +12,16 @@ public class EnemyDamage : MonoBehaviour
     //public GameObject deathEffect;
     public HealthbarEnemy healthbar;
     private PolygonCollider2D attackCollider;
-
+    public AudioSource SoundToPlay;
+    
     void Start()
     {
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
         if (healthbar) healthbar.setHealth(health, maxHealth);
+	SoundToPlay = GetComponent<AudioSource>();
     }
-
+    
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -27,12 +29,17 @@ public class EnemyDamage : MonoBehaviour
         if (healthbar) healthbar.setHealth(health, maxHealth);
         if (health <= 0)
         {
-            Die();
+	    //Destroy(); 
+	    SoundToPlay.Play();
+	    transform.Translate(0, -100, Time.deltaTime);
+            Invoke("Die",0.8f);
         }
     }
 
+    
     void Die()
     {
-        Destroy(gameObject);
+	Destroy(gameObject);
     }
+    
 }
