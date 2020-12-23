@@ -9,7 +9,7 @@ TagManager:
   - Projectile
   - Enemy
   - Obstacle
-  - Damage
+  - Hitbox
   layers:
   - Default
   - TransparentFX

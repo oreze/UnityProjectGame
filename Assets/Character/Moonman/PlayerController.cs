@@ -107,9 +107,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log(timeBetweenAttacks);
             
         }
-
-        if (Input.GetKeyDown(KeyCode.U))
-            TakeDamage(20);
         
 
     }
@@ -132,15 +129,32 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Debug.Log(currentHealth + " = CURRENTHEALTH " + damage + " = DAMAGE");
         currentHealth -= damage;
+        Debug.Log(currentHealth + " = CURRENTHEALTH AFTER ATTACK - DAMAGE " + damage);
         healthBar.SetHealth(currentHealth);
         Instantiate(bloodSplash, new Vector3(rb.position.x, rb.position.y-0.1f, 0), Quaternion.identity);
     }
 
+    public void CheckForSpecialAttacks(string specialAttack, Transform collision)
+    {
+        Debug.Log(specialAttack);
+        if (specialAttack.Equals("SpiritBoxer1"))
+        {
+            rb.AddForce(new Vector2(500f * (transform.position.x < collision.transform.position.x ? -1 : 1), 150f));
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-            TakeDamage(20);
+        if (collision.gameObject.CompareTag("Hitbox"))
+        {
+            EnemyDamage script = collision.transform.parent.parent.GetComponent<EnemyDamage>();
+            (int AttackID, int Damage) Tuple = script.MakeDamage();
+            Debug.Log("Damage = " + Tuple.Damage);
+            TakeDamage(Tuple.Damage);
+            CheckForSpecialAttacks(script.gameObject.name.Replace(" ", "") + Tuple.AttackID, collision.transform);
+        }
     }
 
     public IEnumerator ShootDelay(float time)
