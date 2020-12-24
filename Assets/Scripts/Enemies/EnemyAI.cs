@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
     public string Name;
     public Rigidbody2D RigidBody;
     public Animator PlayerAnimator;
-    public PlayerController Player;
+    //public PlayerController Player;
     public Transform GroundCheck;
     public LayerMask WhatIsGround;
     private Transform Target;
@@ -52,9 +52,13 @@ public class EnemyAI : MonoBehaviour
         //------------------------------------------------------------------------------------------//
         //-----------------------------   ATTACK AND MOVEMENT LOGIC   ------------------------------//
         //------------------------------------------------------------------------------------------//
-
+        if (!Target)
+        {
+            Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
+        
         HasPath = Physics2D.OverlapCircle(GroundCheck.position, CheckRadius, WhatIsGround);
-        DistanceFromPlayer = Vector3.Distance(transform.position, Player.transform.position);
+        DistanceFromPlayer = Vector3.Distance(transform.position, Target.transform.position);
 
         if (HasPath && DistanceFromPlayer < TrackingRange)
         {
