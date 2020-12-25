@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform firePoint;
     public GameObject currentWeapon;
-    [Range(0.01f, 10f)]public float attackSpeeed;
+    [Range(0.01f, 10f)] public float attackSpeeed;
     private float timeBetweenAttacks;
     private bool canShoot;
 
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
@@ -82,11 +82,11 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                isJumping = false; 
+                isJumping = false;
             }
 
         }
-        
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
@@ -105,9 +105,9 @@ public class PlayerController : MonoBehaviour
             canShoot = false;
             StartCoroutine(ShootDelay(timeBetweenAttacks));
             Debug.Log(timeBetweenAttacks);
-            
+
         }
-        
+
 
     }
 
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         Debug.Log(currentHealth + " = CURRENTHEALTH AFTER ATTACK - DAMAGE " + damage);
         healthBar.SetHealth(currentHealth);
-        Instantiate(bloodSplash, new Vector3(rb.position.x, rb.position.y-0.1f, 0), Quaternion.identity);
+        Instantiate(bloodSplash, new Vector3(rb.position.x, rb.position.y - 0.1f, 0), Quaternion.identity);
     }
 
     public void CheckForSpecialAttacks(string specialAttack, Transform collision)
@@ -163,4 +163,9 @@ public class PlayerController : MonoBehaviour
         canShoot = true;
     }
 
+    public Vector3 CurrentPosition()
+    {
+        return transform.position;
+    }
 }
+
