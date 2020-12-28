@@ -12004,6 +12004,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &628598752 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1978510982905004055, guid: a9ebc508528290d498550afbc7b52c19,
+    type: 3}
+  m_PrefabInstance: {fileID: 1978510983141794353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &652055449
 GameObject:
   m_ObjectHideFlags: 0
@@ -58553,6 +58559,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7588507659936959195}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &783333350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1978510983203042002, guid: a9ebc508528290d498550afbc7b52c19,
+    type: 3}
+  m_PrefabInstance: {fileID: 1978510983141794353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &795796815
 GameObject:
   m_ObjectHideFlags: 0
@@ -69289,6 +69301,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &1630218945 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1978510984282347728, guid: a9ebc508528290d498550afbc7b52c19,
+    type: 3}
+  m_PrefabInstance: {fileID: 1978510983141794353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1644179481
 GameObject:
   m_ObjectHideFlags: 0
@@ -120505,6 +120523,78 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 748233473}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 628598752}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: FeetPosition
+      value: 
+      objectReference: {fileID: 1630218945}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: FirePoint
+      value: 
+      objectReference: {fileID: 783333350}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: AttackSpeed
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: Speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: JumpForce
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: CheckRadius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: WhatIsGround.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: Respawn.y
+      value: -0.223
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: Respawn.x
+      value: -17.033
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: JumpTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: BloodSplash
+      value: 
+      objectReference: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+        type: 3}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 748233473}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: CurrentWeapon
+      value: 
+      objectReference: {fileID: 6257501305932054323, guid: c1f55e7ba4fa5364294d9ce43c79ca36,
+        type: 3}
     - target: {fileID: 1978510982905004078, guid: a9ebc508528290d498550afbc7b52c19,
         type: 3}
       propertyPath: m_Name
