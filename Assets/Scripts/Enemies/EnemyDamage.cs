@@ -2,60 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour
+public class EnemyDamage : MonoBehaviour, IEnemyDamage
 {
-    public int maxHealth = 150;
-    private int health;
-    public Vector2Int Attack1Damage;
-    public Vector2Int Attack2Damage;
-    public Vector2Int Attack3Damage;
-    public int previousAttackId { get; set; }
-    public ParticleSystem bloodSplash;
-    private Rigidbody2D rb;
+    public int MaxHealth;
+    protected int Health;
+    public Vector2Int[] AttackDamage;
+    [System.NonSerialized] public int PreviousAttackID;
+    public ParticleSystem BloodSplash;
+    public Rigidbody2D RigidBody;
     //public GameObject deathEffect;
-    public HealthbarEnemy healthbar;
-    private PolygonCollider2D attackCollider;
+    public HealthbarEnemy Healthbar;
+    protected PolygonCollider2D AttackCollider;
     public AudioSource SoundToPlay;
-    
-    void Start()
+
+
+    public virtual (int AttackID, int Damage) MakeDamage()
     {
-        health = maxHealth;
-        rb = GetComponent<Rigidbody2D>();
-        if (healthbar) healthbar.setHealth(health, maxHealth);
-	    SoundToPlay = GetComponent<AudioSource>();
+        Debug.Log(AttackDamage.Length);
+        Debug.Log("attack id: " + PreviousAttackID + " damage " + AttackDamage[PreviousAttackID - 1].x + " " + AttackDamage[PreviousAttackID - 1].y);
+        return (PreviousAttackID, Random.Range(AttackDamage[PreviousAttackID-1].x, AttackDamage[PreviousAttackID-1].y));
     }
-    
-    public void TakeDamage(int damage)
+
+    public virtual void TakeDamage(int damage)
     {
-        health -= damage;
-        Instantiate(bloodSplash, new Vector2(rb.position.x, rb.position.y - 0.1f), Quaternion.identity);
-        if (healthbar)
-            healthbar.setHealth(health, maxHealth);
-        if (health <= 0)
+        Health -= damage;
+        Instantiate(BloodSplash, new Vector2(RigidBody.position.x, RigidBody.position.y - 0.1f), Quaternion.identity);
+        if (Healthbar)
+            Healthbar.setHealth(Health, MaxHealth);
+        if (Health <= 0)
         {
-	        //Destroy(); 
-	        SoundToPlay.Play();
-	        transform.Translate(0, -100, Time.deltaTime);
-            Invoke("Die",0.8f);
+            //Destroy(); 
+            SoundToPlay.Play();
+            transform.Translate(0, -100, Time.deltaTime);
+            Invoke("Die", 0.8f);
         }
     }
 
-    public (int AttackID, int Damage) MakeDamage()
+    protected virtual void Die()
     {
-        EnemyAI AI = GetComponent<EnemyAI>();
-
-        if (previousAttackId == 1)
-            return (1, Random.Range(Attack1Damage.x, Attack1Damage.y));
-        else if (previousAttackId == 2)
-            return (2, Random.Range(Attack2Damage.x, Attack2Damage.y));
-        else
-            return (3, Random.Range(Attack3Damage.x, Attack3Damage.y));
+        Destroy(gameObject);
     }
 
-    
-    void Die()
+    public GameObject GetGameObject()
     {
-	    Destroy(gameObject);
+        return this.gameObject;
     }
-    
+
+
 }

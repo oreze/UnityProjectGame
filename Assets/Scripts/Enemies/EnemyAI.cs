@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : MonoBehaviour, IEnemyAI
 {
     public string Name;
     public Rigidbody2D RigidBody;
@@ -11,81 +12,35 @@ public class EnemyAI : MonoBehaviour
     //public PlayerController Player;
     public Transform GroundCheck;
     public LayerMask WhatIsGround;
-    private Transform Target;
+    protected Transform Target;
 
     public float CheckRadius;
     public float Speed;
-    private bool HasPath;
-    private float DistanceFromPlayer;
+    protected bool HasPath;
+    protected float DistanceFromPlayer;
 
     [Range(0, 3f)] public float TrackingRange;
     [Range(0, 10f)] public float TimeBetweenAttacks;
     [Range(1, 2f)] public float AttackRange;
-    private bool BreakBetweenAttacks;
-    private bool IsAttacking;
-    private bool CanMove;
+    protected bool BreakBetweenAttacks;
+    protected bool IsAttacking;
+    protected bool CanMove;
 
-    private int NumberOfAttacks;
-    private Dictionary<string, float> Clips;
+    protected int NumberOfAttacks;
+    protected Dictionary<string, float> Clips;
 
-    void Start()
-    {
-        RigidBody = GetComponent<Rigidbody2D>();
-        Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    //-----------------------------------------------------------------------------------------//
+    //------------------------------- ATTACK AND MOVEMENT LOGIC -------------------------------//
+    //-----------------------------------------------------------------------------------------//
 
-        IsAttacking = false;
-        BreakBetweenAttacks = false;
-        CanMove = true;
-        NumberOfAttacks = 3;
-        
-        Clips = new Dictionary<string, float>();
-        (string Key, float Value) Tuple;
-        for(int i = 0; i < NumberOfAttacks; i++)                        
-        {
-            Tuple = GetClipLength(Name + "Attack" + (i + 1));
-            Clips.Add(Tuple.Key, Tuple.Value);
-        }
-    }
-
-    void Update()
-    {
-        //------------------------------------------------------------------------------------------//
-        //-----------------------------   ATTACK AND MOVEMENT LOGIC   ------------------------------//
-        //------------------------------------------------------------------------------------------//
-        if (!Target)
-        {
-            Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        }
-        
-        HasPath = Physics2D.OverlapCircle(GroundCheck.position, CheckRadius, WhatIsGround);
-        DistanceFromPlayer = Vector3.Distance(transform.position, Target.transform.position);
-
-        if (HasPath && DistanceFromPlayer < TrackingRange)
-        {
-            AnimatorTransitionInfo info = PlayerAnimator.GetAnimatorTransitionInfo(0);
-            if (!BreakBetweenAttacks)
-            {
-                if (DistanceFromPlayer <= AttackRange)
-                    AttackHandler();
-                if (!IsAttacking && CanMove)
-                    transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
-            }
-            else if (CanMove)
-                transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
-        }
-
-        MovementAnimationHandler();
-    }
-
-
-    private void AttackHandler()
+    protected virtual void AttackHandler()
     {
         IsAttacking = true;
         BreakBetweenAttacks = true;
         CanMove = false;
 
-        int AttackID = Random.Range(1, 4);
-        transform.GetComponent<EnemyDamage>().previousAttackId = AttackID;
+        int AttackID = UnityEngine.Random.Range(NumberOfAttacks != 0 ? 1 : 0, NumberOfAttacks);
+        transform.GetComponent<EnemyDamage>().PreviousAttackID = AttackID;
 
         switch (AttackID)
         {
@@ -103,7 +58,7 @@ public class EnemyAI : MonoBehaviour
         StartCoroutine(SetAttackToFalse(Clips["SpiritBoxerAttack" + AttackID], TimeBetweenAttacks));
     }
 
-    private IEnumerator SetAttackToFalse(float time, float extraTime)
+    protected IEnumerator SetAttackToFalse(float time, float extraTime)
     {
         yield return new WaitForSeconds(time);
         IsAttacking = false;
@@ -112,7 +67,7 @@ public class EnemyAI : MonoBehaviour
         BreakBetweenAttacks = false;
     }
 
-    private void MovementAnimationHandler()
+    protected virtual void MovementAnimationHandler()
     {
         if (transform.hasChanged)
         {
@@ -132,27 +87,27 @@ public class EnemyAI : MonoBehaviour
     //--------------------------------------- COLLISIONS ---------------------------------------//
     //------------------------------------------------------------------------------------------//
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Obstacle"))
-            RigidBody.AddForce(Vector2.up * 100f);
+            RigidBody.AddForce(Vector2.up * 120f);
         else if (collision.CompareTag("Player"))
             CanMove = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
             CanMove = false;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    protected virtual void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
             CanMove = false;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    protected virtual void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
             CanMove = true;
@@ -161,9 +116,18 @@ public class EnemyAI : MonoBehaviour
     //-------------------------------------------------------------------------------------------//
     //------------------------------------------ UTILS ------------------------------------------//
     //-------------------------------------------------------------------------------------------//
-    private (string Key, float Value) GetClipLength(string name)
+
+    protected (string Key, float Value) GetClipLength(string name)
     {
-        AnimationClip Clip = PlayerAnimator.runtimeAnimatorController.animationClips.Single(el => el.name.Equals(name));
-        return (Clip.name, Clip.length);
+        try
+        {
+            Debug.Log(name);
+            AnimationClip Clip = PlayerAnimator.runtimeAnimatorController.animationClips.Single(el => el.name.Equals(name));
+            return (Clip.name, Clip.length);
+        }
+        catch
+        {
+            return (null, 0);
+        }
     }
 }

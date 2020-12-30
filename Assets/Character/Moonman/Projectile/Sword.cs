@@ -21,16 +21,30 @@ public class Sword : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        EnemyDamage enemyDmg = collision.GetComponent<EnemyDamage>();
 
-        if (enemyDmg != null)
+        IEnemyDamage enemyDmg = null;
+
+        if (collision.CompareTag("Enemy"))
         {
+            Debug.Log("COLLISION NAME " + collision.name + " " + collision.gameObject.name);
+
+            /* if (collision.name.Equals("Spirit Boxer"))
+                 enemyDmg = collision.GetComponent<IEnemyDamage>();
+
+             if (enemyDmg != null)
+             {
+                 enemyDmg.TakeDamage(damage);
+             }*/
+            enemyDmg = collision.gameObject.GetComponent<IEnemyDamage>();
             enemyDmg.TakeDamage(damage);
-        }
-        if (!collision.name.Equals("Player") && !collision.tag.Equals("Projectile")) {
-            rb.velocity = transform.right;
-            animator.SetBool("isDestroyed", true);
-            Destroy(gameObject, 0.2f);
+            if (!collision.name.Equals("Player") && !collision.tag.Equals("Projectile"))
+            {
+                rb.velocity = transform.right;
+                animator.SetBool("isDestroyed", true);
+                Destroy(gameObject, 0.2f);
+            }
         }
     }
+
+
 }

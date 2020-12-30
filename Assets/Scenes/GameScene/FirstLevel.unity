@@ -850,6 +850,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &106560120 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 110806305, guid: 1df991878636d36408c44584c74ddf15,
+    type: 3}
+  m_PrefabInstance: {fileID: 3183791742821134164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &130985637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,13 +1220,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c6b0c1d3e04aea4d87da44e111096d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  Attack1Damage: {x: 0, y: 0}
-  Attack2Damage: {x: 0, y: 0}
-  Attack3Damage: {x: 0, y: 0}
-  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
-    type: 3}
-  healthbar: {fileID: 1710214535}
+  MaxHealth: 0
+  AttackDamage: []
+  PreviousAttackID: 0
+  BloodSplash: {fileID: 0}
+  RigidBody: {fileID: 0}
+  Healthbar: {fileID: 0}
   SoundToPlay: {fileID: 0}
 --- !u!95 &188707972
 Animator:
@@ -1409,6 +1414,83 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &200558058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3183791742836702920, guid: 1df991878636d36408c44584c74ddf15,
+    type: 3}
+  m_PrefabInstance: {fileID: 3183791742821134164}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5baaf78de1603fd40a2a42a578b73df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &205588768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3183791742272624927, guid: 1df991878636d36408c44584c74ddf15,
+    type: 3}
+  m_PrefabInstance: {fileID: 3183791742821134164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &205588771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205588768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c6b0c1d3e04aea4d87da44e111096d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  AttackDamage:
+  - {x: 1, y: 3}
+  - {x: 5, y: 10}
+  - {x: 20, y: 30}
+  PreviousAttackID: 0
+  BloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+    type: 3}
+  RigidBody: {fileID: 205588772}
+  Healthbar: {fileID: 200558058}
+  SoundToPlay: {fileID: 0}
+--- !u!50 &205588772 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3183791742272624896, guid: 1df991878636d36408c44584c74ddf15,
+    type: 3}
+  m_PrefabInstance: {fileID: 3183791742821134164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &205588773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205588768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954c6b7a07453c949be3655d46b4e539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Spirit Boxer
+  RigidBody: {fileID: 205588772}
+  PlayerAnimator: {fileID: 205588774}
+  GroundCheck: {fileID: 106560120}
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  CheckRadius: 0.1
+  Speed: 1
+  TrackingRange: 1.24
+  TimeBetweenAttacks: 0.72
+  AttackRange: 1.159
+--- !u!95 &205588774 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3183791742272624921, guid: 1df991878636d36408c44584c74ddf15,
+    type: 3}
+  m_PrefabInstance: {fileID: 3183791742821134164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &208912177
 GameObject:
   m_ObjectHideFlags: 0
@@ -59680,8 +59762,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 939736323}
-  - component: {fileID: 939736326}
-  - component: {fileID: 939736325}
   - component: {fileID: 939736324}
   m_Layer: 10
   m_Name: BabyBoxers
@@ -59803,49 +59883,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &939736325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939736322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c6b0c1d3e04aea4d87da44e111096d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 30
-  Attack1Damage: {x: 0, y: 0}
-  Attack2Damage: {x: 0, y: 0}
-  Attack3Damage: {x: 0, y: 0}
-  bloodSplash: {fileID: 0}
-  healthbar: {fileID: 0}
-  SoundToPlay: {fileID: 0}
---- !u!114 &939736326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939736322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 954c6b7a07453c949be3655d46b4e539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 
-  RigidBody: {fileID: 0}
-  PlayerAnimator: {fileID: 0}
-  GroundCheck: {fileID: 0}
-  WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  CheckRadius: 0
-  Speed: 0
-  TrackingRange: 0
-  TimeBetweenAttacks: 0
-  AttackRange: 0
 --- !u!1 &969735750
 GameObject:
   m_ObjectHideFlags: 0
@@ -70447,7 +70484,6 @@ GameObject:
   - component: {fileID: 1831620570}
   - component: {fileID: 1831620574}
   - component: {fileID: 1831620573}
-  - component: {fileID: 1831620572}
   - component: {fileID: 1831620571}
   - component: {fileID: 1831620575}
   - component: {fileID: 1831620576}
@@ -70500,26 +70536,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09799957, y: 0.082391456}
   m_EdgeRadius: 0
---- !u!114 &1831620572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831620569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c6b0c1d3e04aea4d87da44e111096d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 30
-  Attack1Damage: {x: 0, y: 0}
-  Attack2Damage: {x: 0, y: 0}
-  Attack3Damage: {x: 0, y: 0}
-  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
-    type: 3}
-  healthbar: {fileID: 840787248}
-  SoundToPlay: {fileID: 0}
 --- !u!95 &1831620573
 Animator:
   serializedVersion: 3
@@ -120546,7 +120562,7 @@ PrefabInstance:
     - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
         type: 3}
       propertyPath: Speed
-      value: 1.5
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
         type: 3}
@@ -120684,7 +120700,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3183791742272624901, guid: 1df991878636d36408c44584c74ddf15, type: 3}
+    - {fileID: 3183791742272624923, guid: 1df991878636d36408c44584c74ddf15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1df991878636d36408c44584c74ddf15, type: 3}
 --- !u!1001 &3413269803914799806
 PrefabInstance:

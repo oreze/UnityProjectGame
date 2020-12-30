@@ -105,7 +105,6 @@ public class PlayerController : MonoBehaviour
             Attack();
             CanShoot = false;
             StartCoroutine(ShootDelay(TimeBetweenAttacks));
-
         }
 
 
@@ -129,7 +128,6 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("INFO: " + CurrentHealth + " = CURRENTHEALTH " + damage + " = DAMAGE");
         CurrentHealth -= damage;
         HealthBar.SetHealth(CurrentHealth);
         Instantiate(BloodSplash, new Vector3(RigidBody.position.x, RigidBody.position.y - 0.1f, 0), Quaternion.identity);
@@ -137,7 +135,6 @@ public class PlayerController : MonoBehaviour
 
     public void CheckForSpecialAttacks(string name, Transform collision)
     {
-        Debug.Log("INFO: Special attack named " + name + " made on " + collision.gameObject.name);
         if (name.Equals("SpiritBoxer1"))
         {
             RigidBody.AddForce(new Vector2(500f * (transform.position.x < collision.transform.position.x ? -1 : 1), 150f));
@@ -148,11 +145,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Hitbox"))
         {
-            EnemyDamage script = collision.transform.parent.parent.GetComponent<EnemyDamage>();
+            IEnemyDamage script = collision.transform.parent.parent.GetComponent<IEnemyDamage>();     //TODO make interface for AI and damage scripts;
             (int AttackID, int Damage) Tuple = script.MakeDamage();
-            Debug.Log("Damage = " + Tuple.Damage);
             TakeDamage(Tuple.Damage);
-            CheckForSpecialAttacks(script.gameObject.name.Replace(" ", "") + Tuple.AttackID, collision.transform);
+            CheckForSpecialAttacks(script.GetGameObject().name.Replace(" ", "") + Tuple.AttackID, collision.transform);
         }
     }
 
