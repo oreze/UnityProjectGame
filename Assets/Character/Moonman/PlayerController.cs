@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource mySource;
     public int rangeScan;
+    public int rangeScan2;
     public int IndexDeathSound;
     public AudioClip[] myAudio;
     public int toPlay;
@@ -109,6 +110,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) && CanShoot)
         {
             Attack();
+	    toPlay = Random.Range(rangeScan+1,rangeScan2);
+            mySource.PlayOneShot(myAudio[toPlay], 0.9F);
+            mySource.Play();
             CanShoot = false;
             StartCoroutine(ShootDelay(TimeBetweenAttacks));
         }

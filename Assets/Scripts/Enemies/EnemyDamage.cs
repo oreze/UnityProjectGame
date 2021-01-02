@@ -39,7 +39,7 @@ public class EnemyDamage : MonoBehaviour, IEnemyDamage
 	   toPlay = Random.Range(0,rangeScan);
            SoundToPlay.PlayOneShot(myAudio[toPlay], 0.9F);
            SoundToPlay.Play();
-	   toPlay = (toPlay+1)%rangeScan;
+	   //toPlay = (toPlay+1)%rangeScan;
 	}
         else {
             //Destroy(); 

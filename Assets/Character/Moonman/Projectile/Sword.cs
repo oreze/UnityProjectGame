@@ -9,12 +9,15 @@ public class Sword : MonoBehaviour
     public Animator animator;
     public int damage = 30;
 
+  
+
     void Awake()
     {
         animator = GetComponent<Animator>();
     }
     void Start()
     {
+	
         rb.velocity = transform.right * speed;
         Destroy(gameObject, 2f);
     }
