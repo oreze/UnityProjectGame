@@ -10,6 +10,12 @@ public class PlayerController : MonoBehaviour
     public float JumpForce;
     public Animator Animator;
 
+    public AudioSource mySource;
+    public int rangeScan;
+    public int IndexDeathSound;
+    public AudioClip[] myAudio;
+    public int toPlay;
+    
     private bool IsGrounded;
     public Transform FeetPosition;
     public float CheckRadius;
@@ -128,8 +134,19 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        CurrentHealth -= damage;
+	CurrentHealth -= damage;
         HealthBar.SetHealth(CurrentHealth);
+	if(CurrentHealth > 0){
+	   toPlay = Random.Range(0,rangeScan);
+           mySource.PlayOneShot(myAudio[toPlay], 0.9F);
+           mySource.Play();
+	}
+	else {
+	   mySource.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
+           mySource.Play();
+	   //Die();
+	}
+
         Instantiate(BloodSplash, new Vector3(RigidBody.position.x, RigidBody.position.y - 0.1f, 0), Quaternion.identity);
     }
 
