@@ -8,6 +8,7 @@ public class Sword : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public int damage = 30;
+    [Range(0.1f, 5f)] public float DestroyTime;
 
   
 
@@ -19,7 +20,7 @@ public class Sword : MonoBehaviour
     {
 	
         rb.velocity = transform.right * speed;
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, DestroyTime);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +45,7 @@ public class Sword : MonoBehaviour
             {
                 rb.velocity = transform.right;
                 animator.SetBool("isDestroyed", true);
-                Destroy(gameObject, 0.2f);
+                Destroy(gameObject, 0.15f);
             }
         }
     }

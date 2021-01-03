@@ -30,20 +30,21 @@ public class EnemyDamage : MonoBehaviour, IEnemyDamage
 
     public virtual void TakeDamage(int damage)
     {
+        Debug.Log("Health - damage = " + Health + " - " + damage + " = " + (Health - damage));
         Health -= damage;
         Instantiate(BloodSplash, new Vector2(RigidBody.position.x, RigidBody.position.y - 0.1f), Quaternion.identity);
         if (Healthbar)
             Healthbar.setHealth(Health, MaxHealth);
         if (Health > 0)
 	{
-	   toPlay = Random.Range(0,rangeScan);
+	       toPlay = Random.Range(0,rangeScan);
            SoundToPlay.PlayOneShot(myAudio[toPlay], 0.9F);
            SoundToPlay.Play();
-	   //toPlay = (toPlay+1)%rangeScan;
+	       //toPlay = (toPlay+1)%rangeScan;
 	}
         else {
             //Destroy(); 
-	   SoundToPlay.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
+	       SoundToPlay.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
            SoundToPlay.Play();
            
            transform.Translate(0, -100, Time.deltaTime);

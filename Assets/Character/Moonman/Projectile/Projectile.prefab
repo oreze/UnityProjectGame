@@ -157,3 +157,4 @@ MonoBehaviour:
   rb: {fileID: 7203686187036810548}
   animator: {fileID: 0}
   damage: 30
+  DestroyTime: 0.5

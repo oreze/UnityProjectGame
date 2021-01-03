@@ -107,10 +107,10 @@ public class PlayerController : MonoBehaviour
         {
             Animator.SetBool("IsGrounded", false);
         }
-        if (Input.GetKeyDown(KeyCode.Return) && CanShoot)
+        if (Input.GetKey(KeyCode.Return) && CanShoot)
         {
             Attack();
-	    toPlay = Random.Range(rangeScan+1,rangeScan2);
+	        toPlay = Random.Range(rangeScan+1,rangeScan2);
             mySource.PlayOneShot(myAudio[toPlay], 0.9F);
             mySource.Play();
             CanShoot = false;
@@ -138,15 +138,15 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-	CurrentHealth -= damage;
-        HealthBar.SetHealth(CurrentHealth);
-	if(CurrentHealth > 0){
-	   toPlay = Random.Range(0,rangeScan);
+	    CurrentHealth -= damage;
+            HealthBar.SetHealth(CurrentHealth);
+	    if(CurrentHealth > 0){
+	       toPlay = Random.Range(0,rangeScan);
            mySource.PlayOneShot(myAudio[toPlay], 0.9F);
            mySource.Play();
-	}
-	else {
-	   mySource.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
+	    }
+	    else {
+	       mySource.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
            mySource.Play();
 	   //Die();
 	}

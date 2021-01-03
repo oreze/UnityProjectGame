@@ -156,25 +156,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac64ec9868fa64941acbbfcbccbbcef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  jumpForce: 2.5
-  animator: {fileID: 1978510982905004055}
-  feetPos: {fileID: 1978510984282347728}
-  checkRadius: 0.05
-  whatIsGround:
+  Speed: 1.4
+  JumpForce: 3.75
+  Animator: {fileID: 1978510982905004055}
+  mySource: {fileID: 0}
+  rangeScan: 5
+  rangeScan2: 0
+  IndexDeathSound: 5
+  myAudio:
+  - {fileID: 8300000, guid: 1ae90c4ad4bccd84ca7f73a02246a3ae, type: 3}
+  - {fileID: 8300000, guid: 0db0714c092473d43877a5c6ffc9eee8, type: 3}
+  - {fileID: 8300000, guid: 5981d5d97370cec4c987f848ad636487, type: 3}
+  - {fileID: 8300000, guid: 19d5767ce06d911468638da34e1fd033, type: 3}
+  - {fileID: 8300000, guid: 8238c2162e7d12747bfb276c7645fa7c, type: 3}
+  - {fileID: 8300000, guid: b5a9c22b2158b62498adca1c75ae9f9b, type: 3}
+  toPlay: 0
+  FeetPosition: {fileID: 1978510984282347728}
+  CheckRadius: 0.1
+  WhatIsGround:
     serializedVersion: 2
-    m_Bits: 1280
-  respawn: {x: -17.033, y: 0}
-  jumpTime: 0.25
-  maxHealth: 100
-  currentHealth: 0
-  healthBar: {fileID: 0}
-  bloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
+    m_Bits: 256
+  Respawn: {x: -17.033, y: -0.223}
+  JumpTime: 0.1
+  CurrentHealth: 0
+  HealthBar: {fileID: 0}
+  BloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
     type: 3}
-  firePoint: {fileID: 1978510983203042002}
-  currentWeapon: {fileID: 6257501305932054323, guid: c1f55e7ba4fa5364294d9ce43c79ca36,
+  FirePoint: {fileID: 1978510983203042002}
+  CurrentWeapon: {fileID: 6257501305932054323, guid: c1f55e7ba4fa5364294d9ce43c79ca36,
     type: 3}
-  attackSpeeed: 3.09
+  AttackSpeed: 1.58
 --- !u!1 &1978510983203042003
 GameObject:
   m_ObjectHideFlags: 0

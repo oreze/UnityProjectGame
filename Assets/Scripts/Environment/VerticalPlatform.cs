@@ -15,12 +15,9 @@ public class VerticalPlatform : MonoBehaviour
     {
         
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-
             effector.rotationalOffset = 180f;
-            
-           
         }
         if (Input.GetKey(KeyCode.Space))
         {
