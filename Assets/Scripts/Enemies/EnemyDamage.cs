@@ -18,7 +18,7 @@ public class EnemyDamage : MonoBehaviour, IEnemyDamage
     public int rangeScan;  
     public int IndexDeathSound;
     public AudioClip[] myAudio;
-    private int toPlay;
+    protected int toPlay;
 
 
     public virtual (int AttackID, int Damage) MakeDamage()
