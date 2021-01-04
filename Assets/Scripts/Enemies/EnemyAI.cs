@@ -42,20 +42,9 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
         int AttackID = UnityEngine.Random.Range(NumberOfAttacks != 0 ? 1 : 0, NumberOfAttacks);
         transform.GetComponent<EnemyDamage>().PreviousAttackID = AttackID;
 
-        switch (AttackID)
-        {
-            case 1:
-                PlayerAnimator.SetTrigger("doAttack1");
-                break;
-            case 2:
-                PlayerAnimator.SetTrigger("doAttack2");
-                break;
-            case 3:
-                PlayerAnimator.SetTrigger("doAttack3");
-                break;
-        }
-
-        StartCoroutine(SetAttackToFalse(Clips["SpiritBoxerAttack" + AttackID], TimeBetweenAttacks));
+        PlayerAnimator.SetTrigger("doAttack" + AttackID);
+        Debug.Log(Name + " KLURWA");
+        StartCoroutine(SetAttackToFalse(Clips[Name + "Attack" + AttackID], TimeBetweenAttacks));
     }
 
     protected IEnumerator SetAttackToFalse(float time, float extraTime)

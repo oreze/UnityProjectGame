@@ -30,27 +30,29 @@ public class BabyBoxerAI : EnemyAI
         //-----------------------------   ATTACK AND MOVEMENT LOGIC   ------------------------------//
         //------------------------------------------------------------------------------------------//
         if (!Target)
-        {
             Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        }
 
-        HasPath = Physics2D.OverlapCircle(GroundCheck.position, CheckRadius, WhatIsGround);
+        //HasPath = Physics2D.OverlapCircle(GroundCheck.position, CheckRadius, WhatIsGround);
         DistanceFromPlayer = Vector3.Distance(transform.position, Target.transform.position);
 
-        if (HasPath && DistanceFromPlayer < TrackingRange)
+        if (DistanceFromPlayer < TrackingRange)
         {
             AnimatorTransitionInfo info = PlayerAnimator.GetAnimatorTransitionInfo(0);
             if (!BreakBetweenAttacks)
             {
                 if (DistanceFromPlayer <= AttackRange)
                     AttackHandler();
-                if (!IsAttacking && CanMove)
-                    transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
             }
-            else if (CanMove)
-                transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
         }
 
         MovementAnimationHandler();
+    }
+
+    protected override void MovementAnimationHandler()
+    {
+        if (transform.position.x < Target.position.x)
+            transform.localScale = new Vector2(1, 1);
+        else
+            transform.localScale = new Vector2(-1, 1);
     }
 }

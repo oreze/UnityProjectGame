@@ -166,6 +166,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Hitbox"))
         {
+            Debug.Log(collision.gameObject.name);
             IEnemyDamage script = collision.transform.parent.parent.GetComponent<IEnemyDamage>();     //TODO make interface for AI and damage scripts;
             (int AttackID, int Damage) Tuple = script.MakeDamage();
             TakeDamage(Tuple.Damage);
