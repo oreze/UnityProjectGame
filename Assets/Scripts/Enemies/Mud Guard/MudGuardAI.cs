@@ -13,7 +13,7 @@ public class MudGuardAI : EnemyAI
         IsAttacking = false;
         BreakBetweenAttacks = false;
         CanMove = true;
-        NumberOfAttacks = 3;
+        NumberOfAttacks = 2;
 
         Clips = new Dictionary<string, float>();
         (string Key, float Value) Tuple;
@@ -47,8 +47,10 @@ public class MudGuardAI : EnemyAI
                 if (!IsAttacking && CanMove)
                     transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
             }
-            else if (CanMove)
+            else if (DistanceFromPlayer > 1.1f && CanMove)
+            {
                 transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
+            }   
         }
 
         MovementAnimationHandler();

@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
-using System;
 
-public class SpiritBoxerAI : EnemyAI
+public class StormheadAI : EnemyAI
 {
+    // Start is called before the first frame update
     void Start()
     {
         RigidBody = GetComponent<Rigidbody2D>();
@@ -14,13 +13,13 @@ public class SpiritBoxerAI : EnemyAI
         IsAttacking = false;
         BreakBetweenAttacks = false;
         CanMove = true;
-        NumberOfAttacks = 3;
-        
+        NumberOfAttacks = 1;
+
         Clips = new Dictionary<string, float>();
         (string Key, float Value) Tuple;
-        for(int i = 0; i < NumberOfAttacks; i++)                        
+        for (int i = 0; i < NumberOfAttacks; i++)
         {
-            Tuple = GetClipLength(Name.Replace(" ", "") + "Attack" + (i + 1));
+            Tuple = GetClipLength(Name + "Attack" + (i + 1));
             Clips.Add(Tuple.Key, Tuple.Value);
         }
     }
@@ -34,7 +33,7 @@ public class SpiritBoxerAI : EnemyAI
         {
             Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         }
-        
+
         HasPath = Physics2D.OverlapCircle(GroundCheck.position, CheckRadius, WhatIsGround);
         DistanceFromPlayer = Vector3.Distance(transform.position, Target.transform.position);
 
@@ -45,12 +44,12 @@ public class SpiritBoxerAI : EnemyAI
             {
                 if (DistanceFromPlayer <= AttackRange)
                     AttackHandler();
-                if (!IsAttacking && CanMove && DistanceFromPlayer > 1.01f)
-                    transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
+                if (!IsAttacking && CanMove)
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(Target.position.x, Target.position.y + 0.5f), Speed * Time.deltaTime);
             }
-            else if (CanMove && DistanceFromPlayer > 1.01f)
+            else if (CanMove && DistanceFromPlayer > 1.07f)
             {
-                transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(Target.position.x, Target.position.y + 0.5f), Speed * Time.deltaTime);
             }
         }
 

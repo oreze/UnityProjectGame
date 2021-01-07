@@ -43,7 +43,7 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
         transform.GetComponent<EnemyDamage>().PreviousAttackID = AttackID;
 
         PlayerAnimator.SetTrigger("doAttack" + AttackID);
-        Debug.Log(Name + " KLURWA");
+        Debug.Log("Distance: " + DistanceFromPlayer + " time between + clips" + Clips[Name + "Attack" + AttackID] + " " + TimeBetweenAttacks);
         StartCoroutine(SetAttackToFalse(Clips[Name + "Attack" + AttackID], TimeBetweenAttacks));
     }
 
