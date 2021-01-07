@@ -609,7 +609,7 @@ MonoBehaviour:
   CheckRadius: 0.1
   Speed: 1
   TrackingRange: 1.84
-  TimeBetweenAttacks: 0
+  TimeBetweenAttacks: 1.01
   AttackRange: 1.276
 --- !u!1 &3183791742583557363
 GameObject:

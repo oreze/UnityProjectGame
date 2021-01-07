@@ -206,6 +206,16 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 748233473}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 748233473}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: AttackSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1978510982905004078, guid: a9ebc508528290d498550afbc7b52c19,
         type: 3}
       propertyPath: m_Name
@@ -313,6 +323,7 @@ MonoBehaviour:
   levelPrefabList:
   - {fileID: 1607251339139015508, guid: 9d536fc14888ba94e8d798b87992644d, type: 3}
   - {fileID: 9207585498103813839, guid: f6a9f81c942f506439422dfb662548c1, type: 3}
+  - {fileID: 2101059139563218510, guid: ebc8505dbbbb0d04eb98ca0aab9a91b9, type: 3}
   LevelPrefab1: {fileID: 9207585498103813839, guid: f6a9f81c942f506439422dfb662548c1,
     type: 3}
   ParentGrid: {fileID: 1672054872}
