@@ -23,6 +23,7 @@ public class EnemyDamage : MonoBehaviour, IEnemyDamage
 
     public virtual (int AttackID, int Damage) MakeDamage()
     {
+        Debug.Log(PreviousAttackID + " " + AttackDamage.Length);
         return (PreviousAttackID, Random.Range(AttackDamage[PreviousAttackID-1].x, AttackDamage[PreviousAttackID-1].y));
     }
 
@@ -36,14 +37,14 @@ public class EnemyDamage : MonoBehaviour, IEnemyDamage
         if (Health > 0)
 	{
 	       toPlay = Random.Range(0,rangeScan);
-           SoundToPlay.PlayOneShot(myAudio[toPlay], 0.9F);
-           SoundToPlay.Play();
+           //SoundToPlay.PlayOneShot(myAudio[toPlay], 0.9F);
+           //SoundToPlay.Play();
 	       //toPlay = (toPlay+1)%rangeScan;
 	}
         else {
             //Destroy(); 
-	       SoundToPlay.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
-           SoundToPlay.Play();
+	       //SoundToPlay.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
+           //SoundToPlay.Play();
            
            transform.Translate(0, -100, Time.deltaTime);
            Invoke("Die", 0.8f);
