@@ -587,6 +587,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c797dbfb8b9a267438e12a3b4bebc1e7, type: 3}
   - {fileID: 8300000, guid: 2f8c478e1afd16340ae5cd925ec78dad, type: 3}
   - {fileID: 8300000, guid: 35f80ce3498075643b6a6ac83eeec36b, type: 3}
+  Points: 20
 --- !u!114 &205588773
 MonoBehaviour:
   m_ObjectHideFlags: 0

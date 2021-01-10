@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class SpiritBoxerDamage : EnemyDamage
 {
+    
     void Start()
     {
         Health = MaxHealth;
         RigidBody = GetComponent<Rigidbody2D>();
         if (Healthbar) Healthbar.setHealth(Health, MaxHealth);
 	    SoundToPlay = GetComponent<AudioSource>();
+        Score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
+
     }
 
 /*    public (int AttackID, int Damage) MakeDamage()

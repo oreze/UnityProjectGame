@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Obstacle
   - Hitbox
+  - Score
+  - HUD
   layers:
   - Default
   - TransparentFX

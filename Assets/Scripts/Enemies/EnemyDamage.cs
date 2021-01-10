@@ -20,6 +20,9 @@ public class EnemyDamage : MonoBehaviour, IEnemyDamage
     public AudioClip[] myAudio;
     protected int toPlay;
 
+    protected Score Score;
+    public int Points;
+
 
     public virtual (int AttackID, int Damage) MakeDamage()
     {
@@ -47,12 +50,14 @@ public class EnemyDamage : MonoBehaviour, IEnemyDamage
            //SoundToPlay.Play();
            
            transform.Translate(0, -100, Time.deltaTime);
+           Score.enemyScore += Points;
            Invoke("Die", 0.8f);
         }
     }
 
     protected virtual void Die()
     {
+        
         Destroy(gameObject);
     }
 

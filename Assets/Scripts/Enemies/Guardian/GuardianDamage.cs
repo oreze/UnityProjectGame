@@ -11,5 +11,6 @@ public class GuardianDamage : EnemyDamage
         RigidBody = GetComponent<Rigidbody2D>();
         if (Healthbar) Healthbar.setHealth(Health, MaxHealth);
         SoundToPlay = GetComponent<AudioSource>();
+        Score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
     }
 }

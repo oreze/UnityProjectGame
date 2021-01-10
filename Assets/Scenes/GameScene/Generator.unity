@@ -149,12 +149,12 @@ PrefabInstance:
     - target: {fileID: 1978510982905004048, guid: a9ebc508528290d498550afbc7b52c19,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.341
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1978510982905004048, guid: a9ebc508528290d498550afbc7b52c19,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.387
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1978510982905004048, guid: a9ebc508528290d498550afbc7b52c19,
         type: 3}
@@ -501,17 +501,17 @@ PrefabInstance:
     - target: {fileID: 3183791742272624920, guid: 1df991878636d36408c44584c74ddf15,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0030453503
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 3183791742272624920, guid: 1df991878636d36408c44584c74ddf15,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5131182
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 3183791742272624920, guid: 1df991878636d36408c44584c74ddf15,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3183791742272624920, guid: 1df991878636d36408c44584c74ddf15,
         type: 3}
@@ -557,11 +557,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spirit Boxer
-      objectReference: {fileID: 0}
-    - target: {fileID: 3183791742836702927, guid: 1df991878636d36408c44584c74ddf15,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3183791743774493818, guid: 1df991878636d36408c44584c74ddf15,
         type: 3}
@@ -648,7 +643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894564219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.341, y: 0.387, z: -11}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 311934849}
@@ -704,12 +699,12 @@ PrefabInstance:
     - target: {fileID: 1648548260279518621, guid: a5739c9fda346b4479a98e24367b4e00,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.25041977
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 1648548260279518621, guid: a5739c9fda346b4479a98e24367b4e00,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2789345
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 1648548260279518621, guid: a5739c9fda346b4479a98e24367b4e00,
         type: 3}
@@ -766,6 +761,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 879672896, guid: 56d6d784cb4f30a4493b9336120dec7d, type: 3}
+      propertyPath: m_TagString
+      value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 879672900, guid: 56d6d784cb4f30a4493b9336120dec7d, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 36933264}
     - target: {fileID: 6749064650061618119, guid: 56d6d784cb4f30a4493b9336120dec7d,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -880,11 +883,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6749064651428579491, guid: 56d6d784cb4f30a4493b9336120dec7d,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6749064651428579500, guid: 56d6d784cb4f30a4493b9336120dec7d,
         type: 3}
