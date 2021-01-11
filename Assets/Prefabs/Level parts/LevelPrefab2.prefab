@@ -50,6 +50,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9207585498103813839}
+  - component: {fileID: 1698735886682651907}
   m_Layer: 0
   m_Name: LevelPrefab2
   m_TagString: Untagged
@@ -73,6 +74,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1698735886682651907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274467809069641195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc63c2e079c8a342a68433c6b338dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7182255154336336132
 GameObject:
   m_ObjectHideFlags: 0
