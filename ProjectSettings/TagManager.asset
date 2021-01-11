@@ -12,6 +12,7 @@ TagManager:
   - Hitbox
   - Score
   - HUD
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
