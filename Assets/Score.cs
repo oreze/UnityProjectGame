@@ -5,6 +5,7 @@ public class Score : MonoBehaviour
 {
     public Transform player;
     public Text textScore;
+    public Text HighScore;
     private int currentScore, positionValue;
     public int enemyScore;
 
@@ -12,6 +13,7 @@ public class Score : MonoBehaviour
     {
         currentScore = 0;
         enemyScore = 0;
+        HighScore.text = "High Score " + PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
     void Update()
     {
@@ -22,5 +24,18 @@ public class Score : MonoBehaviour
             currentScore = positionValue;
         }
         textScore.text = (currentScore * 2 + enemyScore).ToString("0");
+
+        if ((currentScore * 2 + enemyScore) > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", (currentScore * 2 + enemyScore));
+            HighScore.text = "High Score " + (currentScore * 2 + enemyScore).ToString();
+        }
+
+        if (Input.GetKey(KeyCode.R))
+        {
+            PlayerPrefs.DeleteKey("HighScore");
+        }
     }
+
+    
 }

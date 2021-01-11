@@ -5,15 +5,28 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public List<GameObject> Enemies;
-    // Start is called before the first frame update
+    public GameObject EnemyType;
+    private GameObject Enemy;
+    private GameObject Parent;
+    [Range(0f, 100f)] public float chance;
     void Start()
     {
+
+        if (Random.value <= (chance / 100)){
+
+        Parent = gameObject.transform.parent.gameObject; 
+        Enemy = Instantiate(EnemyType, gameObject.transform.position /*+ transform.position*/, Quaternion.identity);
+        Enemy.transform.parent = Parent.transform;
+        //Enemy.transform.localScale += new Vector3(2, 1, 1);
+        }
+        /*
         List<GameObject> SpawnPoints = FindObjectsOfTypeAll(typeof(GameObject)).Cast<GameObject>().Where(g => g.tag == "SpawnPoint").ToList();
 
         foreach(GameObject point in SpawnPoints)
         {
-            Instantiate(Enemies[0], point.transform.position + transform.position, Quaternion.identity);
+            Instantiate(Enemies[Random.Range(0, Enemies.Count)], point.transform.position + transform.position, Quaternion.identity);
         }
+        */
     }
+
 }
