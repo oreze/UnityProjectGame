@@ -13,6 +13,7 @@ TagManager:
   - Score
   - HUD
   - SpawnPoint
+  - Buff
   layers:
   - Default
   - TransparentFX
