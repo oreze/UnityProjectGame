@@ -39,7 +39,7 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
         BreakBetweenAttacks = true;
         CanMove = false;
 
-        int AttackID = UnityEngine.Random.Range(NumberOfAttacks != 0 ? 1 : 0, NumberOfAttacks);
+        int AttackID = UnityEngine.Random.Range(NumberOfAttacks != 0 ? 1 : 0, NumberOfAttacks+1);
         transform.GetComponent<EnemyDamage>().PreviousAttackID = AttackID;
 
         PlayerAnimator.SetTrigger("doAttack" + AttackID);
@@ -67,9 +67,9 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
             PlayerAnimator.SetBool("isMoving", false);
 
         if (transform.position.x < Target.position.x)
-            transform.localScale = new Vector2(-1, 1);
-        else
             transform.localScale = new Vector2(1, 1);
+        else
+            transform.localScale = new Vector2(-1, 1);
     }
 
     //------------------------------------------------------------------------------------------//
