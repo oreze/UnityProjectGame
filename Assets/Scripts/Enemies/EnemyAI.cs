@@ -29,6 +29,9 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
     protected int NumberOfAttacks;
     protected Dictionary<string, float> Clips;
 
+    public AudioSource SoundToPlayy;
+    public AudioClip[] myAudioo;
+
     //-----------------------------------------------------------------------------------------//
     //------------------------------- ATTACK AND MOVEMENT LOGIC -------------------------------//
     //-----------------------------------------------------------------------------------------//
@@ -41,6 +44,9 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
 
         int AttackID = UnityEngine.Random.Range(NumberOfAttacks != 0 ? 1 : 0, NumberOfAttacks+1);
         transform.GetComponent<EnemyDamage>().PreviousAttackID = AttackID;
+
+	SoundToPlayy.PlayOneShot(myAudioo[AttackID], 0.9F);
+       	SoundToPlayy.Play();
 
         PlayerAnimator.SetTrigger("doAttack" + AttackID);
         Debug.Log("Distance: " + DistanceFromPlayer + " time between + clips" + Clips[Name + "Attack" + AttackID] + " " + TimeBetweenAttacks);
@@ -65,11 +71,12 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
         }
         else
             PlayerAnimator.SetBool("isMoving", false);
-
+	  
         if (transform.position.x < Target.position.x)
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(1, 1);    
         else
             transform.localScale = new Vector2(-1, 1);
+	
     }
 
     //------------------------------------------------------------------------------------------//

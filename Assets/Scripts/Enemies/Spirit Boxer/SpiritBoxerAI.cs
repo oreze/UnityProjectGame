@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Linq;
 using System;
 
+
+ 
 public class SpiritBoxerAI : EnemyAI
 {
     void Start()
@@ -44,7 +46,9 @@ public class SpiritBoxerAI : EnemyAI
             if (!BreakBetweenAttacks)
             {
                 if (DistanceFromPlayer <= AttackRange)
+		{
                     AttackHandler();
+		}
                 if (!IsAttacking && CanMove && DistanceFromPlayer > 1.01f)
                     transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
             }

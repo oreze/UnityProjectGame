@@ -27,15 +27,15 @@ public class StormheadDamage : EnemyDamage
         {
             Debug.Log(Health + " OVER 0");
             toPlay = Random.Range(0, rangeScan);
-            //SoundToPlay.PlayOneShot(myAudio[toPlay], 0.9F);
-            //SoundToPlay.Play();
-            //toPlay = (toPlay+1)%rangeScan;
+            SoundToPlay.PlayOneShot(myAudio[toPlay], 0.9F);
+            SoundToPlay.Play();
+            toPlay = (toPlay+1)%rangeScan;
         }
         else if (Health <= 0)
         {
             //Destroy(); 
-            //SoundToPlay.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
-            //SoundToPlay.Play();
+            SoundToPlay.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
+            SoundToPlay.Play();
 
             transform.Translate(0, -100, Time.deltaTime);
             Invoke("Die", 0.8f);
