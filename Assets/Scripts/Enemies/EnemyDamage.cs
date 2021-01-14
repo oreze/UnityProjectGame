@@ -26,7 +26,6 @@ public class EnemyDamage : MonoBehaviour, IEnemyDamage
 
     public virtual (int AttackID, int Damage) MakeDamage()
     {
-        Debug.Log(PreviousAttackID + " " + AttackDamage.Length);
         return (PreviousAttackID, Random.Range(AttackDamage[PreviousAttackID-1].x, AttackDamage[PreviousAttackID-1].y));
     }
 

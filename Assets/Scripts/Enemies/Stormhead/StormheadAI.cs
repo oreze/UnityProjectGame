@@ -47,10 +47,15 @@ public class StormheadAI : EnemyAI
                 if (!IsAttacking && CanMove)
                     transform.position = Vector2.MoveTowards(transform.position, new Vector2(Target.position.x, Target.position.y + 0.5f), Speed * Time.deltaTime);
             }
-            else if (CanMove && DistanceFromPlayer > 1.07f)
+            else if (CanMove && DistanceFromPlayer > 1.2f)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(Target.position.x, Target.position.y + 0.5f), Speed * Time.deltaTime);
             }
+            else if (CanMove && DistanceFromPlayer <= 1.19f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(Target.position.x, Target.position.y + 0.5f), -1f * Speed * Time.deltaTime);
+            }
+
         }
 
         MovementAnimationHandler();

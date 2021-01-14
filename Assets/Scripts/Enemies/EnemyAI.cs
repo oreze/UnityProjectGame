@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
     protected Transform Target;
 
     public float CheckRadius;
-    public float Speed;
+    [Range(0, 2)] public float Speed;
     protected bool HasPath;
     protected float DistanceFromPlayer;
 
@@ -49,7 +49,6 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
        	SoundToPlayy.Play();
 
         PlayerAnimator.SetTrigger("doAttack" + AttackID);
-        Debug.Log("Distance: " + DistanceFromPlayer + " time between + clips" + Clips[Name + "Attack" + AttackID] + " " + TimeBetweenAttacks);
         StartCoroutine(SetAttackToFalse(Clips[Name + "Attack" + AttackID], TimeBetweenAttacks));
     }
 
@@ -117,7 +116,6 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
     {
         try
         {
-            Debug.Log(name);
             AnimationClip Clip = PlayerAnimator.runtimeAnimatorController.animationClips.Single(el => el.name.Equals(name));
             return (Clip.name, Clip.length);
         }

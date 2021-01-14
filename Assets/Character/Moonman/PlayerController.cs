@@ -166,7 +166,6 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Hitbox"))
         {
-            Debug.Log(collision.gameObject.name);
             IEnemyDamage script = collision.transform.parent.parent.GetComponent<IEnemyDamage>();     //TODO make interface for AI and damage scripts;
             (int AttackID, int Damage) Tuple = script.MakeDamage();
             TakeDamage(Tuple.Damage);
@@ -176,7 +175,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator ShootDelay(float time)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(1);
         CanShoot = true;
     }
 
