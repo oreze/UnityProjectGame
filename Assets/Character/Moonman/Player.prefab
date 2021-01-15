@@ -187,9 +187,9 @@ MonoBehaviour:
   BloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
     type: 3}
   FirePoint: {fileID: 1978510983203042002}
-  CurrentWeapon: {fileID: 6257501305932054323, guid: c1f55e7ba4fa5364294d9ce43c79ca36,
+  CurrentWeapon: {fileID: -531013219374348992, guid: c1f55e7ba4fa5364294d9ce43c79ca36,
     type: 3}
-  AttackSpeed: 1.5
+  AttackSpeed: 5.55
 --- !u!82 &1246134326
 AudioSource:
   m_ObjectHideFlags: 0
