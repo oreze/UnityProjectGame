@@ -259,8 +259,6 @@ GameObject:
   - component: {fileID: 7918308693151201788}
   - component: {fileID: 7918308693151201791}
   - component: {fileID: 2045687426}
-  - component: {fileID: 2045687427}
-  - component: {fileID: 2045687428}
   - component: {fileID: 6922254379294528558}
   - component: {fileID: 2061681918112921794}
   - component: {fileID: 7371439088945724232}
@@ -502,61 +500,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2045687427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7918308693151201786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065b4e404b4ca724f82e914f295842d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 75
-  AttackDamage:
-  - {x: 2, y: 22}
-  BloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
-    type: 3}
-  RigidBody: {fileID: 7918308693151201788}
-  Healthbar: {fileID: 7918308693935942435}
-  SoundToPlay: {fileID: 0}
-  rangeScan: 6
-  IndexDeathSound: 6
-  myAudio:
-  - {fileID: 8300000, guid: 37831c37cbaed154b86c50b58e12f253, type: 3}
-  - {fileID: 8300000, guid: 29925b1a5cae92f41846316c0b28ab75, type: 3}
-  - {fileID: 8300000, guid: b34b08e283d73804c8280c0b3aca2213, type: 3}
-  - {fileID: 8300000, guid: adc27b22746f1f34e92c5b91d654b9ee, type: 3}
-  - {fileID: 8300000, guid: b3b127f016618e343ba8e23b7ab90d83, type: 3}
-  - {fileID: 8300000, guid: 7f5e18d026f836849a27199eead52f37, type: 3}
-  - {fileID: 8300000, guid: ef770fce05ad57141b317a22b0132aa0, type: 3}
-  Points: 10
---- !u!114 &2045687428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7918308693151201786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6950ee2a4f6e7b41a8b3b69d793471b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: BabyBoxer
-  RigidBody: {fileID: 7918308693151201788}
-  PlayerAnimator: {fileID: 7918308693151201784}
-  GroundCheck: {fileID: 9027753548974743903}
-  WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  CheckRadius: 0.1
-  Speed: 1
-  TrackingRange: 1.56
-  TimeBetweenAttacks: 1.5
-  AttackRange: 1.337
 --- !u!82 &6922254379294528558
 AudioSource:
   m_ObjectHideFlags: 0
@@ -672,7 +615,7 @@ MonoBehaviour:
     type: 3}
   RigidBody: {fileID: 7918308693151201788}
   Healthbar: {fileID: 7918308693935942435}
-  SoundToPlay: {fileID: 0}
+  SoundToPlay: {fileID: 2045687426}
   rangeScan: 6
   IndexDeathSound: 6
   myAudio:
@@ -683,7 +626,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b3b127f016618e343ba8e23b7ab90d83, type: 3}
   - {fileID: 8300000, guid: 7f5e18d026f836849a27199eead52f37, type: 3}
   - {fileID: 8300000, guid: ef770fce05ad57141b317a22b0132aa0, type: 3}
-  Points: 0
+  Points: 10
 --- !u!114 &7371439088945724232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,6 +651,10 @@ MonoBehaviour:
   TrackingRange: 1.56
   TimeBetweenAttacks: 1.5
   AttackRange: 1.337
+  SoundToPlayy: {fileID: 2045687426}
+  myAudioo:
+  - {fileID: 8300000, guid: ae461c863b906714182fe66c11922f41, type: 3}
+  - {fileID: 8300000, guid: 2d399990cf9527043882782b779f07a5, type: 3}
 --- !u!1 &7918308693261977410
 GameObject:
   m_ObjectHideFlags: 0
