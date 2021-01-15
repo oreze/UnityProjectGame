@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Buff : MonoBehaviour
 {
@@ -14,8 +16,17 @@ public class Buff : MonoBehaviour
     [Range(9.8f, 13f)]
     public float FloatUpStrenght;
     public float RandomRotationStrenght;
+    private enum Type
+    {
+        Speed,
+        AttackSpeed,
+        Damage,
+        Healing,
+    }
 
-    public static LinkedList<float> SpeedBuffQueue = new LinkedList<float>();
+    public static LinkedList<float> SpeedBuffs = new LinkedList<float>();
+    public static LinkedList<float> AttackSpeedBuffs = new LinkedList<float>();
+    public static LinkedList<int> DamageBuffs = new LinkedList<int>();
     // Start is called before the first frame update
 
     private void Start()
@@ -27,7 +38,7 @@ public class Buff : MonoBehaviour
         goUp = true;
     }
 
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         transform.Rotate(0, RandomRotationStrenght, 0);
     }
@@ -38,22 +49,67 @@ public class Buff : MonoBehaviour
         {
             //Destroy(gameObject);
             int random = Random.Range(0, 100);
+            Destroy(gameObject);
+            /*
+             * - speed
+             * - attack speed
+             * - dmg
+             * - healing
+             */
 
-            if (Enumerable.Range(0, 100).Contains(random))
+            if (Enumerable.Range(0, 25).Contains(random))
             {
-                float speedBoost = PlayerControllerScript.Speed * 0.5f;
-                SpeedBuffQueue.AddFirst(speedBoost);
+                float speedBoost = PlayerControllerScript.Speed * 0.1f;
+                SpeedBuffs.AddFirst(speedBoost);
                 PlayerControllerScript.Speed += speedBoost;
-                StartCoroutine(WaitAndRestoreSpeed(speedBoost, 1f));
+                StartCoroutine(WaitAndRestore(speedBoost, 5f, Type.Speed));
+            }
+            else if (Enumerable.Range(25, 25).Contains(random))
+            {
+                Debug.Log("BUFF ATTACK SPEED += " + (PlayerControllerScript.AttackSpeed * 1.1f));
+                float attackSpeedBoost = PlayerControllerScript.AttackSpeed * 0.1f;
+                AttackSpeedBuffs.AddFirst(attackSpeedBoost);
+                PlayerControllerScript.AttackSpeed += attackSpeedBoost;
+                StartCoroutine(WaitAndRestore(attackSpeedBoost, 5f, Type.AttackSpeed));
+            }
+            else if (Enumerable.Range(50, 25).Contains(random))
+            {
+                Debug.Log("BUFF DAMAGE += " + (PlayerControllerScript.CurrentWeapon.damage * 1.1f));
+                int damageBoost = (int)(PlayerControllerScript.CurrentWeapon.damage * 0.1f);
+                DamageBuffs.AddFirst(damageBoost);
+                PlayerControllerScript.CurrentWeapon.damage += damageBoost;
+                StartCoroutine(WaitAndRestore(damageBoost, 5f, Type.Damage));
+            }
+            else if (Enumerable.Range(75, 25).Contains(random))
+            {
+                Debug.Log("HEALING += " + (PlayerControllerScript.CurrentHealth + 10));
+                if (PlayerControllerScript.CurrentHealth + 10 >= 100)
+                    PlayerControllerScript.CurrentHealth = 100;
+                else
+                    PlayerControllerScript.CurrentHealth += 10;
 
+                PlayerControllerScript.HealthBar.SetHealth(PlayerControllerScript.CurrentHealth);
             }
         }
     }
 
-    private IEnumerator WaitAndRestoreSpeed(float speedBoost, float time)
+    private IEnumerator WaitAndRestore(float speedBoost, float time, Type type)
     {
         yield return new WaitForSeconds(time);
-        PlayerControllerScript.Speed -= SpeedBuffQueue.First.Value;
-        SpeedBuffQueue.RemoveFirst();
+        if (type == Type.Speed)
+        {
+            PlayerControllerScript.Speed -= SpeedBuffs.First.Value;
+            SpeedBuffs.RemoveFirst();
+        }
+        else if (type == Type.AttackSpeed)
+        {
+            PlayerControllerScript.AttackSpeed -= AttackSpeedBuffs.First.Value;
+            AttackSpeedBuffs.RemoveFirst();
+        }
+        else if (type == Type.Damage)
+        {
+            PlayerControllerScript.CurrentWeapon.damage -= DamageBuffs.First.Value;
+            DamageBuffs.RemoveFirst();
+        }
     }
 }

@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem BloodSplash;
 
     public Transform FirePoint;
-    public GameObject CurrentWeapon;
+    public Sword CurrentWeapon;
     [Range(0.01f, 10f)] public float AttackSpeed;
     private float TimeBetweenAttacks;
     private bool CanShoot;
@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        TimeBetweenAttacks = 1.0f / AttackSpeed;
         IsGrounded = Physics2D.OverlapCircle(FeetPosition.position, CheckRadius, WhatIsGround);
         if (IsGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
@@ -175,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator ShootDelay(float time)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(time);
         CanShoot = true;
     }
 

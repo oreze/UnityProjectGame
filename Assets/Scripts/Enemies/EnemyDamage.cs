@@ -45,12 +45,12 @@ public class EnemyDamage : MonoBehaviour, IEnemyDamage
 	}
         else {
             //Destroy(); 
-	    SoundToPlay.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
-           SoundToPlay.Play();
+	        SoundToPlay.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
+            SoundToPlay.Play();
            
-           transform.Translate(0, -100, Time.deltaTime);
-           Score.enemyScore += Points;
-           Invoke("Die", 0.8f);
+            transform.Translate(0, -100, Time.deltaTime);
+            Score.enemyScore += Points;
+            Invoke("Die", 0.8f);
         }
     }
 

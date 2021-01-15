@@ -7,23 +7,23 @@ public class Sword : MonoBehaviour
     [Range(0f, 10f)] [SerializeField]public float speed;
     public Rigidbody2D rb;
     public Animator animator;
-    public int damage = 30;
+    public int damage;
     [Range(0.1f, 5f)] public float DestroyTime;
 
   
 
-    void Awake()
+    public void Awake()
     {
         animator = GetComponent<Animator>();
     }
-    void Start()
+    public void Start()
     {
 	
         rb.velocity = transform.right * speed;
         Destroy(gameObject, DestroyTime);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
 
         IEnemyDamage enemyDmg = null;
