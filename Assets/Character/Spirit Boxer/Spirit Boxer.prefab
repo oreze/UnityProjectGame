@@ -612,12 +612,6 @@ MonoBehaviour:
   TrackingRange: 1.84
   TimeBetweenAttacks: 1.01
   AttackRange: 1.276
-  SoundToPlayy: {fileID: 637344750}
-  myAudioo:
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 85ae9fff78bd6f84fae34012f0b62c62, type: 3}
-  - {fileID: 8300000, guid: b84b59a52e1f0ec4ab20eae42764810e, type: 3}
-  - {fileID: 8300000, guid: cb691bbd2ad49ea418955d6938c3a8d0, type: 3}
 --- !u!1 &3183791742583557363
 GameObject:
   m_ObjectHideFlags: 0
