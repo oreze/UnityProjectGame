@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
 
     private bool FacingRight = true;
 
+    public PauseMenu Menu;
+
     void Start()
     {
         RigidBody = GetComponent<Rigidbody2D>();
@@ -149,7 +151,7 @@ public class PlayerController : MonoBehaviour
 	    else {
 	       mySource.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
            mySource.Play();
-	   //Die();
+	       Die();
 	}
 
         Instantiate(BloodSplash, new Vector3(RigidBody.position.x, RigidBody.position.y - 0.1f, 0), Quaternion.identity);
@@ -183,6 +185,11 @@ public class PlayerController : MonoBehaviour
     public Vector3 CurrentPosition()
     {
         return transform.position;
+    }
+
+    public void Die()
+    {
+        Menu.LoadDeathMenu();
     }
 }
 

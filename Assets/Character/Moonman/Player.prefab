@@ -189,7 +189,8 @@ MonoBehaviour:
   FirePoint: {fileID: 1978510983203042002}
   CurrentWeapon: {fileID: -531013219374348992, guid: c1f55e7ba4fa5364294d9ce43c79ca36,
     type: 3}
-  AttackSpeed: 5.55
+  AttackSpeed: 1.5
+  Menu: {fileID: 0}
 --- !u!82 &1246134326
 AudioSource:
   m_ObjectHideFlags: 0

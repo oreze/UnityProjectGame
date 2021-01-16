@@ -6,8 +6,10 @@ public class Score : MonoBehaviour
     public Transform player;
     public Text textScore;
     public Text HighScore;
+    public Text EndScore;
     private int currentScore, positionValue;
     public int enemyScore;
+    public PauseMenu pauseMenu;
 
     private void Start()
     {
@@ -24,11 +26,16 @@ public class Score : MonoBehaviour
             currentScore = positionValue;
         }
         textScore.text = (currentScore * 2 + enemyScore).ToString("0");
+        EndScore.text = ("SCORE: " + (currentScore * 2 + enemyScore).ToString("0"));
 
         if ((currentScore * 2 + enemyScore) > PlayerPrefs.GetInt("HighScore", 0))
         {
             PlayerPrefs.SetInt("HighScore", (currentScore * 2 + enemyScore));
             HighScore.text = "High Score " + (currentScore * 2 + enemyScore).ToString();
+            if (!pauseMenu.thereIsNewRecord)
+            {
+                pauseMenu.thereIsNewRecord = true;
+            }
         }
 
         if (Input.GetKey(KeyCode.R))

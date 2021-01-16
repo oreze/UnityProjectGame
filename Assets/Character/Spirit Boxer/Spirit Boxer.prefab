@@ -569,7 +569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   AttackDamage:
-  - {x: 1, y: 3}
+  - {x: 5, y: 10}
   - {x: 5, y: 10}
   - {x: 20, y: 30}
   BloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
