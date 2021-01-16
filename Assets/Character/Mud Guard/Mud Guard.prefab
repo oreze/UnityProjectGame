@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e00eb7edd1f2e47bbd6ed9794df260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 250
   AttackDamage:
   - {x: 10, y: 20}
   - {x: 1, y: 4}
@@ -760,10 +760,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   CheckRadius: 0.1
-  Speed: 1
-  TrackingRange: 1.51
-  TimeBetweenAttacks: 1.01
-  AttackRange: 1.311
+  Speed: 1.2
+  TrackingRange: 2.22
+  TimeBetweenAttacks: 0.91
+  AttackRange: 1.431
   SoundToPlayy: {fileID: 7458223097877338380}
   myAudioo:
   - {fileID: 8300000, guid: f0ca4aba5ff1cdd4e84cf03e138015f1, type: 3}

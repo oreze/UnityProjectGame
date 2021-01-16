@@ -36,6 +36,8 @@ public class MudGuardDamage : EnemyDamage
             SoundToPlay.Play();
 
             transform.Translate(0, -100, Time.deltaTime);
+
+            Score.enemyScore += Points;
             Invoke("Die", 0.8f);
         }
     }

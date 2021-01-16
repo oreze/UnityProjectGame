@@ -851,6 +851,10 @@ PrefabInstance:
       propertyPath: newRecord
       value: 
       objectReference: {fileID: 352486298}
+    - target: {fileID: 1718520078, guid: 56d6d784cb4f30a4493b9336120dec7d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.5
+      objectReference: {fileID: 0}
     - target: {fileID: 902098664488935687, guid: 56d6d784cb4f30a4493b9336120dec7d,
         type: 3}
       propertyPath: m_Name
@@ -860,6 +864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574113516743611611, guid: 56d6d784cb4f30a4493b9336120dec7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 6182746201310078133, guid: 56d6d784cb4f30a4493b9336120dec7d,
         type: 3}
