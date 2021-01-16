@@ -64,6 +64,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
+        playerHasDied = false;
         SceneManager.LoadScene("Generator");
     }
 
