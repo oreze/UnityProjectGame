@@ -72,9 +72,9 @@ public class EnemyAI : MonoBehaviour, IEnemyAI
             PlayerAnimator.SetBool("isMoving", false);
 	  
         if (transform.position.x < Target.position.x)
-            transform.localScale = new Vector2(-1, 1);    
+            transform.localScale = new Vector2(1, 1);    
         else
-            transform.localScale = new Vector2(1, 1);
+            transform.localScale = new Vector2(-1, 1);
 	
     }
 

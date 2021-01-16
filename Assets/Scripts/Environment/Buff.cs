@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class Buff : MonoBehaviour
 {
-    public PlayerController PlayerControllerScript;
+    private PlayerController PlayerControllerScript;
 
     public float FloatingPositionDown;
     public float FloatingPositionUp;
@@ -31,6 +31,7 @@ public class Buff : MonoBehaviour
 
     private void Start()
     {
+        PlayerControllerScript =  GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         FloatingPositionDown = transform.position.y;
         FloatingPositionUp = transform.position.y + 0.2f;
         Debug.Log(gameObject.transform.position.y + " == with");
