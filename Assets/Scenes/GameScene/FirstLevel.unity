@@ -118415,6 +118415,31 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1992182121915432044, guid: 80894b52292768649a49de3d7be11d2b,
+        type: 3}
+      propertyPath: myAudio.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992182121915432044, guid: 80894b52292768649a49de3d7be11d2b,
+        type: 3}
+      propertyPath: rangeScan
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992182121915432044, guid: 80894b52292768649a49de3d7be11d2b,
+        type: 3}
+      propertyPath: IndexDeathSound
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992182121915432044, guid: 80894b52292768649a49de3d7be11d2b,
+        type: 3}
+      propertyPath: myAudio.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4203ea676cd80724f9cc59c51b103a55, type: 3}
+    - target: {fileID: 1992182121915432044, guid: 80894b52292768649a49de3d7be11d2b,
+        type: 3}
+      propertyPath: myAudio.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c086c5e36ca8724c8fe8abe56b22fe6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80894b52292768649a49de3d7be11d2b, type: 3}
 --- !u!1001 &1978510983141794353
@@ -118498,6 +118523,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2124314928}
     m_Modifications:
+    - target: {fileID: 205588771, guid: 1df991878636d36408c44584c74ddf15, type: 3}
+      propertyPath: myAudio.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f8c478e1afd16340ae5cd925ec78dad, type: 3}
+    - target: {fileID: 205588771, guid: 1df991878636d36408c44584c74ddf15, type: 3}
+      propertyPath: myAudio.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ef2bb8519035f34f941a6059148137b, type: 3}
+    - target: {fileID: 205588771, guid: 1df991878636d36408c44584c74ddf15, type: 3}
+      propertyPath: myAudio.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: ade143302dd79714197a6bf66b54a74d, type: 3}
+    - target: {fileID: 205588773, guid: 1df991878636d36408c44584c74ddf15, type: 3}
+      propertyPath: myAudioo.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3097dad395e03ab4a99d14b031e57c5a, type: 3}
+    - target: {fileID: 205588773, guid: 1df991878636d36408c44584c74ddf15, type: 3}
+      propertyPath: myAudioo.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1c140a3d74092b5428275a867cab4adb, type: 3}
+    - target: {fileID: 205588773, guid: 1df991878636d36408c44584c74ddf15, type: 3}
+      propertyPath: myAudioo.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: c020d8663bc6c3d4caeddcfe062f5cdf, type: 3}
+    - target: {fileID: 637344750, guid: 1df991878636d36408c44584c74ddf15, type: 3}
+      propertyPath: m_Volume
+      value: 0.219
+      objectReference: {fileID: 0}
     - target: {fileID: 3183791742272624920, guid: 1df991878636d36408c44584c74ddf15,
         type: 3}
       propertyPath: m_LocalPosition.x

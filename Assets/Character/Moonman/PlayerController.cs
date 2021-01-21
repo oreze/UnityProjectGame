@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public int rangeScan;
     public int rangeScan2;
     public int IndexDeathSound;
+    public int IndexWalkSound;
+    private int IndexJumpSound = 15;
     public AudioClip[] myAudio;
     public int toPlay;
     
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
         HealthBar.SetMaxHealth(MaxHealth);
         CanShoot = true;
         TimeBetweenAttacks = 1.0f / AttackSpeed;
+ 	InvokeRepeating ("PlaySound", 0.1f, 0.35f);    
     }
 
     void FixedUpdate()
@@ -83,6 +86,10 @@ public class PlayerController : MonoBehaviour
             IsJumping = true;
             JumpTimeCounter = JumpTime;
             RigidBody.velocity = Vector2.up * JumpForce;
+ 	    mySource.PlayOneShot(myAudio[IndexJumpSound++], 0.6F);
+	    if(IndexJumpSound == 17) IndexJumpSound = 15; 
+            mySource.Play();
+	    
         }
         if (Input.GetKey(KeyCode.Space) && IsJumping == true)
         {
@@ -120,8 +127,13 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ShootDelay(TimeBetweenAttacks));
         }
 
-
     }
+     void PlaySound () {
+     if (Input.GetButton("Horizontal") && IsGrounded == true){
+           mySource.PlayOneShot(myAudio[IndexWalkSound++], 0.5F);
+	   if(IndexWalkSound == 15) IndexWalkSound = 9; 
+     }
+	 }
 
     private void Flip()
     {
@@ -150,7 +162,7 @@ public class PlayerController : MonoBehaviour
 	    }
 	    else {
 	       mySource.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
-           mySource.Play();
+               mySource.Play();
 	       Die();
 	}
 
