@@ -57,6 +57,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        playerHasDied = false;
         UnityEngine.Debug.Log("QUIT");
         Application.Quit();
     }
@@ -65,6 +66,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
+        playerHasDied = false;
         SceneManager.LoadScene("Menu");
     }
 
