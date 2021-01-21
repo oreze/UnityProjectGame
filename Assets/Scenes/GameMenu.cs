@@ -36,7 +36,7 @@ public class GameMenu : MonoBehaviour
     }
     public void PlayFreeRun()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("Generator");
     }
     public void QuitMenu()
     {

@@ -36,6 +36,7 @@ public class StormheadDamage : EnemyDamage
             //Destroy(); 
             SoundToPlay.PlayOneShot(myAudio[IndexDeathSound], 0.9F);
             SoundToPlay.Play();
+            Score.enemyScore += Points;
 
             transform.Translate(0, -100, Time.deltaTime);
             Invoke("Die", 0.8f);
