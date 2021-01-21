@@ -12,6 +12,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject deathMenu;
     public GameObject newRecord;
+    public Text VolumeValue;
+    public Text MusicVolumeValue;
+    public AudioScript AudioHandler;
 
 
     void Update()
@@ -29,6 +32,11 @@ public class PauseMenu : MonoBehaviour
                     Pause();
                 }
             }
+        }
+        if (isPaused)
+        {
+            VolumeValue.text = (PlayerPrefs.GetFloat("Volume", 0.5f) * 100).ToString("0");
+            MusicVolumeValue.text = (PlayerPrefs.GetFloat("MusicVolume", 0.05f) * 1000).ToString("0");
         }
     }
     
@@ -85,5 +93,33 @@ public class PauseMenu : MonoBehaviour
     {
         newRecord.SetActive(true);
     }
+    public void TurnUpVolume()
+    {
+        float volume = PlayerPrefs.GetFloat("Volume", 0.5f);
+        if (volume < 1) PlayerPrefs.SetFloat("Volume", volume + 0.05f);
+        AudioHandler.VolumeWasChanged = true;
+    }
+
+    public void LowerDownVolume()
+    {
+        float volume = PlayerPrefs.GetFloat("Volume", 0.5f);
+        if (volume > 0.04f) PlayerPrefs.SetFloat("Volume", volume - 0.05f);
+        AudioHandler.VolumeWasChanged = true;
+    }
+    public void TurnUpMusicVolume()
+    {
+        float volume = PlayerPrefs.GetFloat("MusicVolume", 0.05f);
+        if (volume < 0.1f) PlayerPrefs.SetFloat("MusicVolume", volume + 0.005f);
+        AudioHandler.VolumeWasChanged = true;
+    }
+
+    public void LowerDownMusicVolume()
+    {
+        float volume = PlayerPrefs.GetFloat("MusicVolume", 0.05f);
+        if (volume > 0.004f) PlayerPrefs.SetFloat("MusicVolume", volume - 0.005f);
+        AudioHandler.VolumeWasChanged = true;
+    }
 }
+
+
 

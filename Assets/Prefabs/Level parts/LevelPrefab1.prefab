@@ -386,6 +386,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloatingRock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4360612378786130245, guid: f2ba070ac829630418de14dba4b0035b,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 898773043b2e6bd4b9131c429c308439, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2ba070ac829630418de14dba4b0035b, type: 3}
 --- !u!4 &1972017476901130153 stripped
@@ -461,6 +466,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloatingRock
       objectReference: {fileID: 0}
+    - target: {fileID: 4360612378786130245, guid: f2ba070ac829630418de14dba4b0035b,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 898773043b2e6bd4b9131c429c308439, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2ba070ac829630418de14dba4b0035b, type: 3}
 --- !u!4 &372549204910139454 stripped
@@ -776,6 +786,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1560127152672693217}
     m_Modifications:
+    - target: {fileID: 3056264402586034761, guid: 90ffbaaebe341634faf5975d6a20dd4c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 898773043b2e6bd4b9131c429c308439, type: 2}
     - target: {fileID: 3056264402586034764, guid: 90ffbaaebe341634faf5975d6a20dd4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -911,6 +926,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloatingRock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4360612378786130245, guid: f2ba070ac829630418de14dba4b0035b,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 898773043b2e6bd4b9131c429c308439, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2ba070ac829630418de14dba4b0035b, type: 3}
 --- !u!4 &5393936356748750967 stripped

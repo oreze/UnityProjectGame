@@ -199,7 +199,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 93581180}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 898773043b2e6bd4b9131c429c308439, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3285,7 +3285,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1000747568867295342}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 898773043b2e6bd4b9131c429c308439, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3310,10 +3310,10 @@ PolygonCollider2D:
       - {x: 12.480254, y: -1.5957674}
       - {x: 12.501806, y: -3.2148228}
       - {x: 16.463726, y: -3.2015517}
-      - {x: 16.4654, y: -2.708631}
-      - {x: 15.585764, y: -2.703782}
-      - {x: 12.999849, y: -2.6895278}
-      - {x: 12.954447, y: -2.7119975}
+      - {x: 16.466919, y: -2.6363134}
+      - {x: 15.590487, y: -2.6423507}
+      - {x: 12.995401, y: -2.6361237}
+      - {x: 12.963343, y: -2.6331089}
       - {x: 12.953617, y: -1.0642415}
       - {x: 12.938624, y: -1.0624477}
 --- !u!61 &6213529651105842150
@@ -7514,6 +7514,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform5x1
       objectReference: {fileID: 0}
+    - target: {fileID: 8770670578104235614, guid: 5d11295330db61e47b196c42c762effa,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 898773043b2e6bd4b9131c429c308439, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d11295330db61e47b196c42c762effa, type: 3}
 --- !u!4 &5884552493037097989 stripped
