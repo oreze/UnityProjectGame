@@ -471,7 +471,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.377
+  m_Volume: 0.219
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -582,10 +582,10 @@ MonoBehaviour:
   myAudio:
   - {fileID: 8300000, guid: 52f11360c13b93747a8958fbbad0d6d6, type: 3}
   - {fileID: 8300000, guid: 49470605159c83f4485e349ee4956772, type: 3}
-  - {fileID: 8300000, guid: 13a62d229d64f0949bf286efc1c034cf, type: 3}
-  - {fileID: 8300000, guid: 456d84e6692207e4fbf9756f6ad6f975, type: 3}
-  - {fileID: 8300000, guid: c797dbfb8b9a267438e12a3b4bebc1e7, type: 3}
   - {fileID: 8300000, guid: 2f8c478e1afd16340ae5cd925ec78dad, type: 3}
+  - {fileID: 8300000, guid: 456d84e6692207e4fbf9756f6ad6f975, type: 3}
+  - {fileID: 8300000, guid: 7ef2bb8519035f34f941a6059148137b, type: 3}
+  - {fileID: 8300000, guid: ade143302dd79714197a6bf66b54a74d, type: 3}
   - {fileID: 8300000, guid: 35f80ce3498075643b6a6ac83eeec36b, type: 3}
   Points: 20
 --- !u!114 &205588773
@@ -615,9 +615,9 @@ MonoBehaviour:
   SoundToPlayy: {fileID: 637344750}
   myAudioo:
   - {fileID: 0}
-  - {fileID: 8300000, guid: 85ae9fff78bd6f84fae34012f0b62c62, type: 3}
-  - {fileID: 8300000, guid: b84b59a52e1f0ec4ab20eae42764810e, type: 3}
-  - {fileID: 8300000, guid: cb691bbd2ad49ea418955d6938c3a8d0, type: 3}
+  - {fileID: 8300000, guid: 3097dad395e03ab4a99d14b031e57c5a, type: 3}
+  - {fileID: 8300000, guid: 1c140a3d74092b5428275a867cab4adb, type: 3}
+  - {fileID: 8300000, guid: c020d8663bc6c3d4caeddcfe062f5cdf, type: 3}
 --- !u!1 &3183791742583557363
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,15 +14,18 @@ public class PlayerController : MonoBehaviour
     public int rangeScan;
     public int rangeScan2;
     public int IndexDeathSound;
-    public int IndexWalkSound;
-    private int IndexJumpSound = 15;
+    public int IndexWalkSound; 
+    public int IndexWalkWoodSound;
+    public int IndexJumpSound;
     public AudioClip[] myAudio;
     public int toPlay;
     
     private bool IsGrounded;
+    private bool IsOnPlatform; 
     public Transform FeetPosition;
     public float CheckRadius;
     public LayerMask WhatIsGround;
+    public LayerMask WhatIsPlatform;
     public Vector2 Respawn;
 
     private float JumpTimeCounter;
@@ -81,16 +84,23 @@ public class PlayerController : MonoBehaviour
     {
         TimeBetweenAttacks = 1.0f / AttackSpeed;
         IsGrounded = Physics2D.OverlapCircle(FeetPosition.position, CheckRadius, WhatIsGround);
-        if (IsGrounded == true && Input.GetKeyDown(KeyCode.Space))
+	IsOnPlatform = Physics2D.OverlapCircle(FeetPosition.position, CheckRadius, WhatIsPlatform);
+        if ((IsGrounded == true || IsOnPlatform) && Input.GetKeyDown(KeyCode.Space))
         {
             IsJumping = true;
             JumpTimeCounter = JumpTime;
             RigidBody.velocity = Vector2.up * JumpForce;
  	    mySource.PlayOneShot(myAudio[IndexJumpSound++], 0.6F);
-	    if(IndexJumpSound == 17) IndexJumpSound = 15; 
+	    if(IndexJumpSound == 18) IndexJumpSound = 16; 
             mySource.Play();
 	    
         }
+
+	if(IsOnPlatform == true)
+	{
+		
+
+	}
         if (Input.GetKey(KeyCode.Space) && IsJumping == true)
         {
             if (JumpTimeCounter > 0)
@@ -109,7 +119,7 @@ public class PlayerController : MonoBehaviour
         {
             IsJumping = false;
         }
-        if (IsGrounded)
+        if (IsGrounded || IsOnPlatform)
         {
             Animator.SetBool("IsGrounded", true);
         }
@@ -117,6 +127,8 @@ public class PlayerController : MonoBehaviour
         {
             Animator.SetBool("IsGrounded", false);
         }
+
+
         if (Input.GetKey(KeyCode.Return) && CanShoot)
         {
             Attack();
@@ -128,13 +140,17 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-     void PlaySound () {
+     void PlaySound() {
      if (Input.GetButton("Horizontal") && IsGrounded == true){
            mySource.PlayOneShot(myAudio[IndexWalkSound++], 0.5F);
-	   if(IndexWalkSound == 15) IndexWalkSound = 9; 
+	   if(IndexWalkSound == 13) IndexWalkSound = 9; 
      }
+     else if(Input.GetButton("Horizontal") && IsOnPlatform == true)
+	{
+		mySource.PlayOneShot(myAudio[IndexWalkWoodSound++], 0.5F);
+	   	if(IndexWalkWoodSound == 16) IndexWalkWoodSound = 13; 
 	 }
-
+    }
     private void Flip()
     {
         // Switch the way the player is labelled as facing.

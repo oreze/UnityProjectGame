@@ -9,7 +9,6 @@ public class GameMenu : MonoBehaviour
 {
     public Text HighScore, HighScore2, VolumeValue;
     private bool WasDeleted, VolumeWasChanged;
-   
 
     public void Start()
     {
@@ -34,10 +33,12 @@ public class GameMenu : MonoBehaviour
             AudioListener.volume = PlayerPrefs.GetFloat("Volume", 0.5f)/2f;
         }
     }
+	
     public void PlayFreeRun()
     {
-        SceneManager.LoadScene("Generator");
+	SceneManager.LoadScene("LoadingScreen");     
     }
+
     public void QuitMenu()
     {
         UnityEngine.Debug.Log("QUIT");

@@ -13,6 +13,10 @@ public class Buff : MonoBehaviour
     public float FloatingPositionUp;
     private bool goUp;
 
+    public AudioSource mySource;
+    public AudioClip[] myAudio;
+    //public int toPlay;
+
     [Range(9.8f, 13f)]
     public float FloatUpStrenght;
     public float RandomRotationStrenght;
@@ -49,6 +53,8 @@ public class Buff : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Destroy(gameObject);
+            mySource.PlayOneShot(myAudio[0], 0.6F);
+            mySource.Play();
             int random = Random.Range(0, 100);
             Destroy(gameObject);
             /*

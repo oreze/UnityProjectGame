@@ -216,6 +216,26 @@ PrefabInstance:
       propertyPath: CheckRadius
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: myAudio.Array.data[15]
+      value: 
+      objectReference: {fileID: 8300000, guid: a046e4c4b6ff26c4aae5f92a4061d619, type: 3}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: myAudio.Array.data[16]
+      value: 
+      objectReference: {fileID: 8300000, guid: 13b04f3a2ee30c34a97b93c50eb881ef, type: 3}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: WhatIsPlatform.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978510982905004051, guid: a9ebc508528290d498550afbc7b52c19,
+        type: 3}
+      propertyPath: myAudio.Array.data[14]
+      value: 
+      objectReference: {fileID: 8300000, guid: c4b8c9d8ade097d419dc1f51ac1b63cd, type: 3}
     - target: {fileID: 1978510982905004078, guid: a9ebc508528290d498550afbc7b52c19,
         type: 3}
       propertyPath: m_Name

@@ -58091,9 +58091,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2559326187619061707, guid: 2b7d730821727754baae13054c562cd7,
         type: 3}
+      propertyPath: myAudio.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2559326187619061707, guid: 2b7d730821727754baae13054c562cd7,
+        type: 3}
       propertyPath: PlayerControllerScript
       value: 
       objectReference: {fileID: 1222934545}
+    - target: {fileID: 2559326187619061707, guid: 2b7d730821727754baae13054c562cd7,
+        type: 3}
+      propertyPath: myAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7fb41977ddc808a4fa66ab893d4b9cef, type: 3}
+    - target: {fileID: 2559326187619061707, guid: 2b7d730821727754baae13054c562cd7,
+        type: 3}
+      propertyPath: mySource
+      value: 
+      objectReference: {fileID: 2034249483}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b7d730821727754baae13054c562cd7, type: 3}
 --- !u!1 &795796815
@@ -59085,7 +59100,7 @@ GameObject:
   - component: {fileID: 1032725850}
   - component: {fileID: 1032725849}
   - component: {fileID: 1032725848}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Shelf (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59746,7 +59761,7 @@ GameObject:
   - component: {fileID: 1108210038}
   - component: {fileID: 1108210037}
   - component: {fileID: 1108210036}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: BigStone
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -65418,7 +65433,7 @@ GameObject:
   - component: {fileID: 1326768414}
   - component: {fileID: 1326768413}
   - component: {fileID: 1326768412}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: MerchantPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67004,7 +67019,7 @@ GameObject:
   - component: {fileID: 1335327964}
   - component: {fileID: 1335327963}
   - component: {fileID: 1335327962}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Shelf (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68516,7 +68531,7 @@ GameObject:
   - component: {fileID: 1684153002}
   - component: {fileID: 1684153001}
   - component: {fileID: 1684153000}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68894,7 +68909,7 @@ GameObject:
   - component: {fileID: 1942178175}
   m_Layer: 8
   m_Name: Hill
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71706,6 +71721,109 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!1 &2034249479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 422280209233539501, guid: 2b7d730821727754baae13054c562cd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 768329880}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2034249483
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034249479}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ee48a34a2bf887a4a8bfe7a7b4c34909,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2049056331
 GameObject:
   m_ObjectHideFlags: 0
@@ -118523,34 +118641,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2124314928}
     m_Modifications:
-    - target: {fileID: 205588771, guid: 1df991878636d36408c44584c74ddf15, type: 3}
-      propertyPath: myAudio.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2f8c478e1afd16340ae5cd925ec78dad, type: 3}
-    - target: {fileID: 205588771, guid: 1df991878636d36408c44584c74ddf15, type: 3}
-      propertyPath: myAudio.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 7ef2bb8519035f34f941a6059148137b, type: 3}
-    - target: {fileID: 205588771, guid: 1df991878636d36408c44584c74ddf15, type: 3}
-      propertyPath: myAudio.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: ade143302dd79714197a6bf66b54a74d, type: 3}
-    - target: {fileID: 205588773, guid: 1df991878636d36408c44584c74ddf15, type: 3}
-      propertyPath: myAudioo.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3097dad395e03ab4a99d14b031e57c5a, type: 3}
-    - target: {fileID: 205588773, guid: 1df991878636d36408c44584c74ddf15, type: 3}
-      propertyPath: myAudioo.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1c140a3d74092b5428275a867cab4adb, type: 3}
-    - target: {fileID: 205588773, guid: 1df991878636d36408c44584c74ddf15, type: 3}
-      propertyPath: myAudioo.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: c020d8663bc6c3d4caeddcfe062f5cdf, type: 3}
-    - target: {fileID: 637344750, guid: 1df991878636d36408c44584c74ddf15, type: 3}
-      propertyPath: m_Volume
-      value: 0.219
-      objectReference: {fileID: 0}
     - target: {fileID: 3183791742272624920, guid: 1df991878636d36408c44584c74ddf15,
         type: 3}
       propertyPath: m_LocalPosition.x

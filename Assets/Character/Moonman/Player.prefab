@@ -293,6 +293,8 @@ MonoBehaviour:
   rangeScan2: 9
   IndexDeathSound: 5
   IndexWalkSound: 9
+  IndexWalkWoodSound: 13
+  IndexJumpSound: 16
   myAudio:
   - {fileID: 8300000, guid: 1ae90c4ad4bccd84ca7f73a02246a3ae, type: 3}
   - {fileID: 8300000, guid: 0db0714c092473d43877a5c6ffc9eee8, type: 3}
@@ -305,18 +307,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fc4c68b953dbfb2419ff14bafc3e920d, type: 3}
   - {fileID: 8300000, guid: d5107e28fbadae4409bdfb75343aea37, type: 3}
   - {fileID: 8300000, guid: f4eb9542d25b62144804ca459d128b45, type: 3}
-  - {fileID: 8300000, guid: d5107e28fbadae4409bdfb75343aea37, type: 3}
-  - {fileID: 8300000, guid: 14f66c2ba94ec3d499351cdceeda4e2a, type: 3}
-  - {fileID: 8300000, guid: f4eb9542d25b62144804ca459d128b45, type: 3}
   - {fileID: 8300000, guid: 4fd15e759f8727649915a3b3946caf8b, type: 3}
-  - {fileID: 8300000, guid: a15d288db0396cd40ba48cda2c4b06f8, type: 3}
-  - {fileID: 8300000, guid: c9f9b656519e52c4ba351d21aa8dcb1b, type: 3}
+  - {fileID: 8300000, guid: 14f66c2ba94ec3d499351cdceeda4e2a, type: 3}
+  - {fileID: 8300000, guid: d06c68cc2bd33674ca8229851c7022e7, type: 3}
+  - {fileID: 8300000, guid: c4b8c9d8ade097d419dc1f51ac1b63cd, type: 3}
+  - {fileID: 8300000, guid: a046e4c4b6ff26c4aae5f92a4061d619, type: 3}
+  - {fileID: 8300000, guid: 13b04f3a2ee30c34a97b93c50eb881ef, type: 3}
+  - {fileID: 8300000, guid: b250ea4bd9824f04a9577eaf8b755ef5, type: 3}
   toPlay: 0
   FeetPosition: {fileID: 1978510984282347728}
   CheckRadius: 0.1
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  WhatIsPlatform:
+    serializedVersion: 2
+    m_Bits: 4096
   Respawn: {x: -17.033, y: -0.223}
   JumpTime: 0.1
   CurrentHealth: 0
