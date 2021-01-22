@@ -36,6 +36,7 @@ public class Buff : MonoBehaviour
     private void Start()
     {
         PlayerControllerScript =  GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        mySource = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
         FloatingPositionDown = transform.position.y;
         FloatingPositionUp = transform.position.y + 0.2f;
         Debug.Log(gameObject.transform.position.y + " == with");

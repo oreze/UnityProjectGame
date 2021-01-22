@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     [Range(0f, 100f)] public float chance;
     void Start()
     {
-
+        Destroy(gameObject);
         if (Random.value <= (chance / 100)){
 
         Parent = gameObject.transform.parent.gameObject; 

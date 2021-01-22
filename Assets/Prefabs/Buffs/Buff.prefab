@@ -111,8 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba565807868d0914093da21d3cb89467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerControllerScript: {fileID: 0}
   FloatingPositionDown: 0
   FloatingPositionUp: 0
+  mySource: {fileID: 0}
+  myAudio:
+  - {fileID: 8300000, guid: f0ca4aba5ff1cdd4e84cf03e138015f1, type: 3}
   FloatUpStrenght: 12
   RandomRotationStrenght: 5
