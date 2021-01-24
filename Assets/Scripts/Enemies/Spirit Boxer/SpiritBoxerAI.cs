@@ -49,10 +49,10 @@ public class SpiritBoxerAI : EnemyAI
 		{
                     AttackHandler();
 		}
-                if (!IsAttacking && CanMove && DistanceFromPlayer > 1.01f)
+                if (!IsAttacking && CanMove && DistanceFromPlayer > 0.1f)
                     transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
             }
-            else if (CanMove && DistanceFromPlayer > 1.01f)
+            else if (CanMove && DistanceFromPlayer > 0.1f)
             {
                 transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
             }

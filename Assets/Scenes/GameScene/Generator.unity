@@ -372,6 +372,7 @@ MonoBehaviour:
   - {fileID: 2101059139563218510, guid: ebc8505dbbbb0d04eb98ca0aab9a91b9, type: 3}
   - {fileID: 4345646918566783268, guid: c9f3befaf93902b42820445efbd38a4f, type: 3}
   - {fileID: 6924566119408090285, guid: 673b603600bf1a745bd97d9bd69b253f, type: 3}
+  - {fileID: 1841755804092387427, guid: 892d76809b7c38c46ac749f267fc13b5, type: 3}
   LevelPrefab1: {fileID: 9207585498103813839, guid: f6a9f81c942f506439422dfb662548c1,
     type: 3}
   ParentGrid: {fileID: 1672054872}

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 555099318637486489}
   - component: {fileID: 3112328099673101790}
   m_Layer: 0
-  m_Name: BuffSpawn (1)
+  m_Name: BuffSpawn
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

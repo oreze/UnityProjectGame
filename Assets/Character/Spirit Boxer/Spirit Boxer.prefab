@@ -610,7 +610,7 @@ MonoBehaviour:
   CheckRadius: 0.1
   Speed: 1
   TrackingRange: 1.84
-  TimeBetweenAttacks: 1.01
+  TimeBetweenAttacks: 0.56
   AttackRange: 1.276
   SoundToPlayy: {fileID: 637344750}
   myAudioo:
