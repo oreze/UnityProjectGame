@@ -12,6 +12,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private Transform ParentGrid;
     [SerializeField] private PlayerController player;
     private Vector3 lastEndPositon;
+    private int lastSpawnedPrefab;
     private void Awake()
     {
         
@@ -21,6 +22,8 @@ public class LevelGenerator : MonoBehaviour
         {
             SpawnLevelPrefab();
         }
+
+        lastSpawnedPrefab = -1;
     }
 
     private void Update()
@@ -33,9 +36,17 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
-    private void SpawnLevelPrefab()     
+    private void SpawnLevelPrefab()
     {
-        Transform drawedLevelPrefab = levelPrefabList[Random.Range(0, levelPrefabList.Count)];
+        int spawnedPrefab;
+        do
+        {
+            spawnedPrefab = Random.Range(0, levelPrefabList.Count);
+        } while (spawnedPrefab == lastSpawnedPrefab);
+
+        lastSpawnedPrefab = spawnedPrefab;
+        Transform drawedLevelPrefab = levelPrefabList[spawnedPrefab];
+
 
         Transform lastLevelPrefabTransform = SpawnLevelPrefab(drawedLevelPrefab, lastEndPositon);
         lastEndPositon = lastLevelPrefabTransform.Find("EndPosition").position;
