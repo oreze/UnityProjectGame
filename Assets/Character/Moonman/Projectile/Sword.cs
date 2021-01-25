@@ -9,12 +9,16 @@ public class Sword : MonoBehaviour
     public Animator animator;
     public int damage;
     [Range(0.1f, 5f)] public float DestroyTime;
+    protected PlayerController player;
 
   
 
     public void Awake()
     {
+        player = GameObject.FindObjectOfType<PlayerController>();
+        damage = player.damage;
         animator = GetComponent<Animator>();
+
     }
     public void Start()
     {

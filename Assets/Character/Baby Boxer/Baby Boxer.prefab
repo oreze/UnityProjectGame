@@ -579,7 +579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 75
   AttackDamage:
-  - {x: 2, y: 22}
+  - {x: 30, y: 40}
   BloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
     type: 3}
   RigidBody: {fileID: 7918308693151201788}
@@ -595,7 +595,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b3b127f016618e343ba8e23b7ab90d83, type: 3}
   - {fileID: 8300000, guid: 7f5e18d026f836849a27199eead52f37, type: 3}
   - {fileID: 8300000, guid: ef770fce05ad57141b317a22b0132aa0, type: 3}
-  Points: 10
+  Points: 15
 --- !u!114 &7371439088945724232
 MonoBehaviour:
   m_ObjectHideFlags: 0

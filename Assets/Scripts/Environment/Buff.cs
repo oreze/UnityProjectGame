@@ -20,6 +20,8 @@ public class Buff : MonoBehaviour
     [Range(9.8f, 13f)]
     public float FloatUpStrenght;
     public float RandomRotationStrenght;
+
+    protected Score score;
     private enum Type
     {
         Speed,
@@ -42,6 +44,7 @@ public class Buff : MonoBehaviour
         Debug.Log(gameObject.transform.position.y + " == with");
         Debug.Log(transform.position.y + " == without");
         goUp = true;
+        score  = GameObject.FindObjectOfType<Score>();
     }
 
     public void FixedUpdate()
@@ -65,58 +68,67 @@ public class Buff : MonoBehaviour
              * - healing
              */
 
-            if (Enumerable.Range(0, 25).Contains(random))
+            if (Enumerable.Range(0, 10).Contains(random))
             {
+                score.enemyScore += 30;
                 float speedBoost = PlayerControllerScript.Speed * 0.1f;
                 SpeedBuffs.AddFirst(speedBoost);
                 PlayerControllerScript.Speed += speedBoost;
-                StartCoroutine(WaitAndRestore(speedBoost, 5f, Type.Speed));
+                StartCoroutine(WaitAndRestore(speedBoost, 5f, 1));
+                
             }
-            else if (Enumerable.Range(25, 25).Contains(random))
+            else if (Enumerable.Range(10, 25).Contains(random))
             {
+                score.enemyScore += 30;
                 Debug.Log("BUFF ATTACK SPEED += " + (PlayerControllerScript.AttackSpeed * 1.1f));
                 float attackSpeedBoost = PlayerControllerScript.AttackSpeed * 0.1f;
                 AttackSpeedBuffs.AddFirst(attackSpeedBoost);
                 PlayerControllerScript.AttackSpeed += attackSpeedBoost;
-                StartCoroutine(WaitAndRestore(attackSpeedBoost, 5f, Type.AttackSpeed));
+                StartCoroutine(WaitAndRestore(attackSpeedBoost, 5f, 2));
+                
             }
-            else if (Enumerable.Range(50, 25).Contains(random))
+            else if (Enumerable.Range(35, 25).Contains(random))
             {
-                Debug.Log("BUFF DAMAGE += " + (PlayerControllerScript.CurrentWeapon.damage * 1.1f));
-                int damageBoost = (int)(PlayerControllerScript.CurrentWeapon.damage * 0.1f);
+                score.enemyScore += 30;
+                Debug.Log("BUFF DAMAGE += " + (PlayerControllerScript.damage * 1.2f));
+                int damageBoost = (int)(PlayerControllerScript.damage * 0.2f);
                 DamageBuffs.AddFirst(damageBoost);
-                PlayerControllerScript.CurrentWeapon.damage += damageBoost;
-                StartCoroutine(WaitAndRestore(damageBoost, 5f, Type.Damage));
+                PlayerControllerScript.damage += damageBoost;
+
+                StartCoroutine(WaitAndRestore(damageBoost, 5f, 3));
+                
             }
-            else if (Enumerable.Range(75, 25).Contains(random))
+            else if (Enumerable.Range(60, 40).Contains(random))
             {
-                Debug.Log("HEALING += " + (PlayerControllerScript.CurrentHealth + 10));
-                if (PlayerControllerScript.CurrentHealth + 10 >= 100)
+                score.enemyScore += 30;
+                Debug.Log("HEALING += " + (PlayerControllerScript.CurrentHealth + 30));
+                if (PlayerControllerScript.CurrentHealth + 30 >= 100)
                     PlayerControllerScript.CurrentHealth = 100;
                 else
-                    PlayerControllerScript.CurrentHealth += 10;
+                    PlayerControllerScript.CurrentHealth += 30;
 
                 PlayerControllerScript.HealthBar.SetHealth(PlayerControllerScript.CurrentHealth);
+                
             }
         }
     }
 
-    private IEnumerator WaitAndRestore(float speedBoost, float time, Type type)
+    private IEnumerator WaitAndRestore(float speedBoost, float time, int type)
     {
-        yield return new WaitForSeconds(time);
-        if (type == Type.Speed)
+        yield return new WaitForSeconds(5);
+        if (type == 1)
         {
             PlayerControllerScript.Speed -= SpeedBuffs.First.Value;
             SpeedBuffs.RemoveFirst();
         }
-        else if (type == Type.AttackSpeed)
+        else if (type == 2)
         {
             PlayerControllerScript.AttackSpeed -= AttackSpeedBuffs.First.Value;
             AttackSpeedBuffs.RemoveFirst();
         }
-        else if (type == Type.Damage)
+        else if (type == 3)
         {
-            PlayerControllerScript.CurrentWeapon.damage -= DamageBuffs.First.Value;
+            PlayerControllerScript.damage -= DamageBuffs.First.Value;
             DamageBuffs.RemoveFirst();
         }
     }

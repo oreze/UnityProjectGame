@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     private bool FacingRight = true;
 
     public PauseMenu Menu;
+    public int damage;
 
     void Start()
     {

@@ -720,10 +720,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e00eb7edd1f2e47bbd6ed9794df260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 250
+  MaxHealth: 300
   AttackDamage:
+  - {x: 15, y: 25}
   - {x: 10, y: 20}
-  - {x: 1, y: 4}
   BloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
     type: 3}
   RigidBody: {fileID: 1430031412505323639}

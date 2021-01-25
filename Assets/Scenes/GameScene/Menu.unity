@@ -3732,8 +3732,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 5.127594}
+  m_SizeDelta: {x: 0, y: 11.254425}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857713770
 MonoBehaviour:
@@ -3807,7 +3807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.7, y: 141.6}
+  m_AnchoredPosition: {x: 5.7, y: 153}
   m_SizeDelta: {x: 7145.6914, y: 364.89325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1870817403
@@ -3844,9 +3844,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Infinite Runner is a game created as final project for the subject\"game
     programming\" at Maria Curie Sk\u0142odowska University.\nCreators:\nSzymon J\u0119drych\nKacper
-    Siembida\nPawe\u0142 Lysko\n\nCredits:\nPlayer sprites - NekotoArts nekotoarts.itch.io\nEnemies
-    sprites - Penusbmic penusbmic.itch.io\n\nSounds:\r\nRick Hoppmann - www.tinyworlds.org\r\nartisticdude\r\nJuhani
-    Junkala\r\nChristopher Borzecki\r\nMichel Baradari apollo-music.de\r\nrubberduck\r\nIndependent.nu\nJute\n\n"
+    Siembida\nPawe\u0142 Lysko\nCredits:\nPlayer sprites - NekotoArts nekotoarts.itch.io\nEnemies
+    sprites - Penusbmic penusbmic.itch.io\nSounds:\r\nRick Hoppmann - www.tinyworlds.org\r\nartisticdude\r\nJuhani
+    Junkala\r\nChristopher Borzecki\r\nMichel Baradari apollo-music.de\r\nrubberduck\r\nIndependent.nu\nJute\nGallaecio\r\nzapsplat.com\r\ndklon\r\n\n"
 --- !u!222 &1870817404
 CanvasRenderer:
   m_ObjectHideFlags: 0

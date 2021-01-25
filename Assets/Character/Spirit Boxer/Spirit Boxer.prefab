@@ -571,7 +571,7 @@ MonoBehaviour:
   AttackDamage:
   - {x: 5, y: 10}
   - {x: 5, y: 10}
-  - {x: 20, y: 30}
+  - {x: 15, y: 20}
   BloodSplash: {fileID: 3659155700536523074, guid: aab3a7a50d9b3114bae00345360c7370,
     type: 3}
   RigidBody: {fileID: 3183791742272624896}
